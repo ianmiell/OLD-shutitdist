@@ -13,7 +13,7 @@ class python2(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir /tmp/python')
 		shutit.send('cd /tmp/python')
-		shutit.send('curl http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz | xz -d | tar -xf -')
+		shutit.send('curl -L http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd Python-*')
 		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4')
 		shutit.send('make')
