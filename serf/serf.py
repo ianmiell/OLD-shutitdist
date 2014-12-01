@@ -50,6 +50,6 @@ def module():
 		'shutit.tk.sd.serf.serf', 158844782.0151352461436,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.apache_portable_runtime.apache_portable_runtime','shutit.tk.sd.scons.scons']
+		depends=['shutit.tk.sd.apache_portable_runtime.apache_portable_runtime']
 	)
 
