@@ -15,7 +15,7 @@ class zip(ShutItModule):
 		#http://www.info-zip.org/Zip.html 
 		shutit.send('mkdir -p /tmp/zip')
 		shutit.send_host_file('/tmp/zip/unzip60.tar.gz','context/unzip60.tar.gz')
-		shutit.send('pushd /tmp/zip')
+		shutit.send('cd /tmp/zip')
 		shutit.send('tar -zxf unzip60.tar.gz')
 		shutit.send('cd unzip60')
 		shutit.send('make -f unix/Makefile IZ_BZIP2=/opt/bzip2/bzip2-1.0.6 IZ_ZLIB=../../zlib/zlib-1.2.5 generic')

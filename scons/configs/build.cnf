@@ -15,4 +15,8 @@ shutit.core.module.allowed_images:["debian.*","imiell/sd_.*"]
 
 # Aspects of build process
 [build]
+<<<<<<< Updated upstream
 base_image:imiell/sd_python2
+=======
+base_image:imiell/sd_libxml2
+>>>>>>> Stashed changes
