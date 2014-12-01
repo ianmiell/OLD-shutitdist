@@ -16,7 +16,7 @@ class autoconf(ShutItModule):
 		shutit.send('cd /tmp/autoconf')
 		shutit.send('curl http://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd autoconf-*')
-		shutit.send('./configure')
+		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('cd')

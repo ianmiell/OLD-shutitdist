@@ -15,7 +15,7 @@ class python2(ShutItModule):
 		shutit.send('cd /tmp/python')
 		shutit.send('curl https://www.python.org/ftp/python/2.7.9/Python-2.7.9rc1.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd Python-*')
-		shutit.send('./configure --enable-shared --prefix=/usr')
+		shutit.send('./configure --prefix=/usr --enable-shared')
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mkdir -p /usr/include/python2.7/')

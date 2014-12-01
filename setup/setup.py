@@ -13,7 +13,9 @@ class setup(ShutItModule):
 	def build(self, shutit):
 		shutit.install('build-essential')
 		shutit.install('curl')
-		shutit.install('m4')
+		shutit.install('m4') # do we need this?
+		shutit.install('strace') # remove later, for debug
+		shutit.install('vim') # remove later, for debug
 		return True
 
 	#def get_config(self, shutit):
