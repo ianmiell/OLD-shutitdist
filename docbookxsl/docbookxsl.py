@@ -11,7 +11,25 @@ class docbookxsl(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('
+		shutit.send('mkdir -p /tmp/docbookxsl')
+		shutit.send('cd /tmp/docbookxsl')
+		shutit.send('curl -L http://downloads.sourceforge.net/docbook/docbook-xsl-1.78.1.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('cd docbook-*')
+		shutit.send('install -v -m755 -d /usr/share/xml/docbook/xsl-stylesheets-1.78.1')
+		shutit.send('cp -v -R VERSION common eclipse epub extensions fo highlighting html htmlhelp images javahelp lib manpages params profiling roundtrip slides template tests tools webhelp website xhtml xhtml-1_1 /usr/share/xml/docbook/xsl-stylesheets-1.78.1')
+		shutit.send('ln -s VERSION /usr/share/xml/docbook/xsl-stylesheets-1.78.1/VERSION.xsl')
+		shutit.send('install -v -m644 -D README /usr/share/doc/docbook-xsl-1.78.1/README.txt')
+		shutit.send('install -v -m644    RELEASE-NOTES* NEWS* /usr/share/doc/docbook-xsl-1.78.1')
+		shutit.send('if [ ! -d /etc/xml ]; then install -v -m755 -d /etc/xml; fi')
+		shutit.send('if [ ! -f /etc/xml/catalog ]; then xmlcatalog --noout --create /etc/xml/catalog; fi')
+		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/1.78.1" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
+		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/1.78.1" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
+		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/current" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
+		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/current" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
+		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
+		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
+		shutit.send('cd')
+		shutit.send('rm -rf /tmp/docbookxsl')
 		return True
 
 	#def get_config(self, shutit):
@@ -41,6 +59,6 @@ def module():
 		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.0112351235,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.setup.setup']
 	)
 
