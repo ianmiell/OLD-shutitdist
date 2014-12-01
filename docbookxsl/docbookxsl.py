@@ -59,6 +59,6 @@ def module():
 		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.0112351235,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.libxml2.libxml2']
 	)
 
