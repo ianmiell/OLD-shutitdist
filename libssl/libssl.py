@@ -13,8 +13,8 @@ class libssl(ShutItModule):
 
 	def build(self, shutit):
 		#https://www.openssl.org/source/
-		shutit.send('mkdir -p /tmp/libssl')
-		shutit.send('cd /tmp/libssl')
+		shutit.send('mkdir -p /tmp/build/libssl')
+		shutit.send('cd /tmp/build/libssl')
 		shutit.send('curl -L https://www.openssl.org/source/openssl-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('wget http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1j-fix_parallel_build-1.patch')
 		shutit.send('cd openssl-' + shutit.cfg[self.module_id]['version'])
@@ -23,7 +23,6 @@ class libssl(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('cd')
-		shutit.send('rm -rf /tmp/libssl')
 		return True
 
 	def get_config(self, shutit):
@@ -40,7 +39,7 @@ class libssl(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /opt/libssl')
+		shutit.send('rm -rf /tmp/build/libssl')
 		return True
 
 	#def remove(self, shutit):

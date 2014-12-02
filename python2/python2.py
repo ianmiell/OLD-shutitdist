@@ -11,8 +11,8 @@ class python2(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir /tmp/python')
-		shutit.send('cd /tmp/python')
+		shutit.send('mkdir /tmp/build/python')
+		shutit.send('cd /tmp/build/python')
 		shutit.send('curl -L http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd Python-*')
 		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4 --with-zlib')
@@ -22,7 +22,6 @@ class python2(ShutItModule):
 		shutit.send('mkdir -p /usr/include/python2.7/')
 		shutit.send('cp Include/* /usr/include/python2.7/')
 		shutit.send('cd')
-		#shutit.send('rm -rf /tmp/python')
 		return True
 
 	#def get_config(self, shutit):
@@ -38,8 +37,9 @@ class python2(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/python')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.python2.python2', 158844782.0012516436,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libffi.libffi']
+		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.libz.libz']
 	)
 

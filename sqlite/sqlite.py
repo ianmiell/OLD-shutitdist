@@ -12,14 +12,13 @@ class sqlite(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('cd /tmp')
+		shutit.send('mkdir -p /tmp/build/sqlite')
+		shutit.send('cd /tmp/build/sqlite')
 		shutit.send('curl http://www.sqlite.org/2014/sqlite-autoconf-3080701.tar.gz | gunzip -c - | tar -xf -')
 		shutit.send('cd sqlite-autoconf-*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
-		shutit.send('rm -rf /tmp/sqlite*')
 		return True
 
 	#def get_config(self, shutit):
@@ -34,8 +33,9 @@ class sqlite(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/sqlite')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

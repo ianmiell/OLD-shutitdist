@@ -12,15 +12,13 @@ class autoconf(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/autoconf')
-		shutit.send('cd /tmp/autoconf')
+		shutit.send('mkdir -p /tmp/build/autoconf')
+		shutit.send('cd /tmp/build/autoconf')
 		shutit.send('curl http://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd autoconf-*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
-		shutit.send('rm -rf /tmp/autoconf')
 		return True
 
 	#def get_config(self, shutit):
@@ -35,8 +33,9 @@ class autoconf(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/autoconf')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

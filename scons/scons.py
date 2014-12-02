@@ -12,15 +12,13 @@ class scons(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/scons')
-		shutit.send('cd /tmp/scons')
+		shutit.send('mkdir -p /tmp/build/scons')
+		shutit.send('cd /tmp/build/scons')
 		shutit.send('curl https://bitbucket.org/scons/scons/get/45aab7f663f7.zip > scons.zip')
 		shutit.send('unzip scons.zip')
 		shutit.send('cd scons-*')
 		shutit.send('python bootstrap.py')
 		shutit.send('python setup.py install --prefix=/usr --standard-lib --optimize=1 --install-data=/usr/share')
-		shutit.send('cd')
-		#shutit.send('rm -rf /tmp/scons')
 		return True
 
 	#def get_config(self, shutit):
@@ -35,8 +33,9 @@ class scons(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/scons')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

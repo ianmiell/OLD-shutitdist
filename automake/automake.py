@@ -12,15 +12,13 @@ class automake(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/automake')
-		shutit.send('cd /tmp/automake')
+		shutit.send('mkdir -p /tmp/build/automake')
+		shutit.send('cd /tmp/build/automake')
 		shutit.send('curl http://ftp.gnu.org/gnu/automake/automake-' + shutit.cfg[self.module_id]['version'] + '.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd /tmp/automake/automake-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
-		shutit.send('rm -rf /tmp/automake')
 		return True
 
 	def get_config(self, shutit):
@@ -36,8 +34,9 @@ class automake(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/automake')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

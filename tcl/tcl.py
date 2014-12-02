@@ -11,8 +11,8 @@ class tcl(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/tcl')
-		shutit.send('cd /tmp/tcl')
+		shutit.send('mkdir -p /tmp/build/tcl')
+		shutit.send('cd /tmp/build/tcl')
 		shutit.send('curl -L http://downloads.sourceforge.net/tcl/tcl8.6.3-src.tar.gz | tar -zxf -')
 		shutit.send('cd tcl8*')
 		shutit.send('export SRCDIR=`pwd`')
@@ -42,8 +42,9 @@ class tcl(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/tcl'
+		return True
 
 	#def remove(self, shutit):
 	#	return True

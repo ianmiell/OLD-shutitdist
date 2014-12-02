@@ -13,15 +13,13 @@ class zlib(ShutItModule):
 
 	def build(self, shutit):
 		#From http://www.zlib.net/
-		shutit.send('mkdir -p /tmp/zlib')
-		shutit.send('cd /tmp/zlib')
+		shutit.send('mkdir -p /tmp/build/zlib')
+		shutit.send('cd /tmp/build/zlib')
 		shutit.send('curl http://zlib.net/zlib-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('cd zlib-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
-		#shutit.send('rm -rf /tmp/zlib')
 		return True
 
 	def get_config(self, shutit):
@@ -38,7 +36,7 @@ class zlib(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /opt/zlib')
+		shutit.send('rm -rf /tmp/build/zlib')
 		return True
 
 	#def remove(self, shutit):

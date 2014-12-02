@@ -11,13 +11,12 @@ class lxml(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/lxml')
-		shutit.send('cd /tmp/lxml')
+		shutit.send('mkdir -p /tmp/build/lxml')
+		shutit.send('cd /tmp/build/lxml')
 		shutit.send('curl -L https://github.com/lxml/lxml/archive/master.zip > master.zip')
 		shutit.send('unzip master.zip')
 		shutit.send('cd lxml-*')
 		shutit.pause_point('')
-		#shutit.send('rm -rf /tmp/lxml')
 		return True
 
 	#def get_config(self, shutit):
@@ -33,8 +32,9 @@ class lxml(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/lxml')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

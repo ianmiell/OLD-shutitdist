@@ -11,8 +11,8 @@ class docbookxsl(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/docbookxsl')
-		shutit.send('cd /tmp/docbookxsl')
+		shutit.send('mkdir -p /tmp/build/docbookxsl')
+		shutit.send('cd /tmp/build/docbookxsl')
 		shutit.send('curl -L http://downloads.sourceforge.net/docbook/docbook-xsl-1.78.1.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd docbook-*')
 		shutit.send('install -v -m755 -d /usr/share/xml/docbook/xsl-stylesheets-1.78.1')
@@ -29,7 +29,6 @@ class docbookxsl(ShutItModule):
 		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
 		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
 		shutit.send('cd')
-		shutit.send('rm -rf /tmp/docbookxsl')
 		return True
 
 	#def get_config(self, shutit):
@@ -45,8 +44,9 @@ class docbookxsl(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/docbookxsl')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

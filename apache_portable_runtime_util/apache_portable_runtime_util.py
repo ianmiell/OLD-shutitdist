@@ -12,14 +12,13 @@ class apache_portable_runtime_util(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('cd /tmp')
+		shutit.send('mkdir /tmp/build/apr-util')
+		shutit.send('cd /tmp/build/apr-util')
 		shutit.send('curl http://apache.mirrors.timporter.net/apr/apr-util-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('cd apr-util*')
 		shutit.send('./configure --prefix=/usr --with-apr=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
-		shutit.send('rm -rf /tmp/apr-*')
 		return True
 
 	def get_config(self, shutit):
@@ -35,8 +34,9 @@ class apache_portable_runtime_util(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/apr-*')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
