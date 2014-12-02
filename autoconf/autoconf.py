@@ -45,7 +45,7 @@ class autoconf(ShutItModule):
 
 def module():
 	return autoconf(
-		'shutit.tk.sd.autoconf.autoconf', 158844782.0100925156,
+		'shutit.tk.sd.autoconf.autoconf', 158844782.00100925156,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

@@ -20,6 +20,8 @@ class zlib(ShutItModule):
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
+		shutit.send('mkdir -p /tmp/build/zlib_headers')
+		shutit.send('cp -r * /tmp/build/zlib_headers')
 		return True
 
 	def get_config(self, shutit):
@@ -47,7 +49,7 @@ class zlib(ShutItModule):
 
 def module():
 	return zlib(
-		'shutit.tk.sd.zlib.zlib', 158844782.01011326125136,
+		'shutit.tk.sd.zlib.zlib', 158844782.001011326125136,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.automake.automake']

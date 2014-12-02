@@ -14,7 +14,7 @@ class libffi(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/libffi')
 		shutit.send('cd /tmp/build/libffi')
 		shutit.send('curl -L ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz | tar -zxf -')
-		shutit.send('cd /tmp/build/libffi/libffi-*')
+		shutit.send('cd libffi-*')
 		shutit.send("sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in")
 		shutit.send("sed -e '/^includedir/ s/=.*$/=@includedir@/' -e 's/^Cflags: -I${includedir}/Cflags:/' -i libffi.pc.in")
 		shutit.send('./configure --prefix=/usr --disable-static')

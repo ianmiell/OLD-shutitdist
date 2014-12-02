@@ -14,11 +14,12 @@ class scons(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/scons')
 		shutit.send('cd /tmp/build/scons')
-		shutit.send('curl https://bitbucket.org/scons/scons/get/45aab7f663f7.zip > scons.zip')
-		shutit.send('unzip scons.zip')
+		shutit.send('curl -L http://sourceforge.net/projects/scons/files/scons/2.3.4/scons-2.3.4.tar.gz | tar -zxf -')
 		shutit.send('cd scons-*')
-# copy this to pip libs dir /tmp/libxslt/libxslt-1.1.28
-		shutit.send('python bootstrap.py')
+		shutit.send('mkdir -p /tmp/pip_build_root/lxml/src/lxml/includes')
+		shutit.send('cp -r /tmp/build/libxml2/libxml2-2.9.2/include/libxml /tmp/pip_build_root/lxml/src/lxml/includes')
+		shutit.send('cp -r /tmp/build/libxslt/libxslt-1.1.28 /tmp/pip_build_root/lxml/src/lxml/includes')
+		shutit.send('pip install lxml')
 		shutit.send('python setup.py install --prefix=/usr --standard-lib --optimize=1 --install-data=/usr/share')
 		return True
 
@@ -46,9 +47,9 @@ class scons(ShutItModule):
 
 def module():
 	return scons(
-		'shutit.tk.sd.scons.scons', 158844782.0126264346,
+		'shutit.tk.sd.scons.scons', 158844782.01926264346,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.zip.zip','shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.docbookxsl.docbookxsl']
+		depends=['shutit.tk.sd.zip.zip','shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.docbookxsl.docbookxsl','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libxslt.libxslt']
 	)
 

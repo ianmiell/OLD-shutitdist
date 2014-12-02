@@ -15,7 +15,9 @@ class python2(ShutItModule):
 		shutit.send('cd /tmp/build/python')
 		shutit.send('curl -L http://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd Python-*')
-		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4 --with-zlib')
+		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4')
+		# Enable zlib module
+		shutit.send(r"sed -i 's/#\(zlib zlibmodule.c -I..prefix.\/include\) \(-L$(exec_prefix)\/lib -lz\)/\1:\/tmp\/build\/zlib-headers \2/g' Modules/Setup.dist")
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('chmod -v 755 /usr/lib/libpython2.7.so.1.0')
