@@ -17,6 +17,7 @@ class scons(ShutItModule):
 		shutit.send('curl https://bitbucket.org/scons/scons/get/45aab7f663f7.zip > scons.zip')
 		shutit.send('unzip scons.zip')
 		shutit.send('cd scons-*')
+# copy this to pip libs dir /tmp/libxslt/libxslt-1.1.28
 		shutit.send('python bootstrap.py')
 		shutit.send('python setup.py install --prefix=/usr --standard-lib --optimize=1 --install-data=/usr/share')
 		return True

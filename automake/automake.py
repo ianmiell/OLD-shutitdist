@@ -15,7 +15,7 @@ class automake(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/automake')
 		shutit.send('cd /tmp/build/automake')
 		shutit.send('curl http://ftp.gnu.org/gnu/automake/automake-' + shutit.cfg[self.module_id]['version'] + '.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd /tmp/automake/automake-' + shutit.cfg[self.module_id]['version'])
+		shutit.send('cd /tmp/build/automake/automake-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
