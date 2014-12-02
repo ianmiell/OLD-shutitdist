@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.python2.python2', 158844782.0012516436,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.libz.libz']
+		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib']
 	)
 
