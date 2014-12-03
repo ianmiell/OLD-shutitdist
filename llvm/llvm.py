@@ -14,7 +14,7 @@ class llvm(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/llvm')
 		shutit.send('cd /tmp/build/llvm')
 		shutit.send('curl -L http://llvm.org/releases/' + shutit.cfg[self.module_id]['version'] + '/llvm-' + shutit.cfg[self.module_id]['version'] + '.src.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd llvm-' + shutit.cfg[self.module_id]['version'])
+		shutit.send('cd llvm-*')
 		shutit.send('sed -e "s:/docs/llvm:/share/doc/llvm-' + shutit.cfg[self.module_id]['version'] + ':" -i Makefile.config.in')
 		shutit.send('CC=gcc CXX=g++ ./configure --prefix=/usr --sysconfdir=/etc --enable-libffi --enable-optimized --enable-shared --disable-assertions')
 		shutit.send('make')

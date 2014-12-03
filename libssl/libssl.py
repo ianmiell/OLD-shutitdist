@@ -16,7 +16,7 @@ class libssl(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/libssl')
 		shutit.send('cd /tmp/build/libssl')
 		shutit.send('curl -L https://www.openssl.org/source/openssl-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
-		shutit.send('wget http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1j-fix_parallel_build-1.patch')
+		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1j-fix_parallel_build-1.patch > openssl-1.0.1j-fix_parallel_build-1.patch')
 		shutit.send('cd openssl-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('curl http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1j-fix_parallel_build-1.patch | patch -Np1 -i -')
 		shutit.send('./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared zlib-dynamic')
