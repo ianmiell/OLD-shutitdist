@@ -8,7 +8,7 @@ class zip(ShutItModule):
 
 
 	def is_installed(self, shutit):
-		return False
+		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 
 	def build(self, shutit):
@@ -20,6 +20,12 @@ class zip(ShutItModule):
 		shutit.send('cd unzip60')
 		shutit.send('make -f unix/Makefile IZ_BZIP2=/opt/bzip2/bzip2-1.0.6 IZ_ZLIB=../../zlib/zlib-1.2.5 generic')
 		shutit.send('make -f unix/Makefile install')
+
+		shutit.send('cd /tmp/build/zip')
+		shutit.send('curl -L http://downloads.sourceforge.net/infozip/zip30.tar.gz | tar -zxf -')
+		shutit.send('cd zip30')
+		shutit.send('make -f unix/Makefile generic_gcc')
+		shutit.send('make prefix=/usr MANDIR=/usr/share/man/man1 -f unix/Makefile install')
 		return True
 
 	#def get_config(self, shutit):

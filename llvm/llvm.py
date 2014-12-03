@@ -1,5 +1,4 @@
 """ShutIt module. See http://shutit.tk
-In source, line 16 should be blank, within the build def. This doesn't matter except for test builds, so can be removed once in use.
 """
 
 from shutit_module import ShutItModule
@@ -14,17 +13,17 @@ class llvm(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/llvm')
 		shutit.send('cd /tmp/build/llvm')
-		shutit.send('tar -xvf http://llvm.org/releases/3.5.0/llvm-3.5.0.src.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd llvm-3.5.0')
-		shutit.send('sed -e "s:/docs/llvm:/share/doc/llvm-3.5.0:" -i Makefile.config.in')
+		shutit.send('curl -L http://llvm.org/releases/' + shutit.cfg[self.module_id]['version'] + '/llvm-' + shutit.cfg[self.module_id]['version'] + '.src.tar.xz | xz -d | tar -xf -')
+		shutit.send('cd llvm-' + shutit.cfg[self.module_id]['version'])
+		shutit.send('sed -e "s:/docs/llvm:/share/doc/llvm-' + shutit.cfg[self.module_id]['version'] + ':" -i Makefile.config.in')
 		shutit.send('CC=gcc CXX=g++ ./configure --prefix=/usr --sysconfdir=/etc --enable-libffi --enable-optimized --enable-shared --disable-assertions')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
+	def get_config(self, shutit):
+		shutit.get_config(self.module_id,'version','3.5.0')
+		return True
 
 	#def check_ready(self, shutit):
 	#	return True
@@ -46,7 +45,7 @@ class llvm(ShutItModule):
 
 def module():
 	return llvm(
-		'shutit.tk.sd.llvm.llvm', 158844782.00,
+		'shutit.tk.sd.llvm.llvm', 158844782.011241253,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.python2.python2']

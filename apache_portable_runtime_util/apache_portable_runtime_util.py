@@ -8,14 +8,14 @@ class apache_portable_runtime_util(ShutItModule):
 
 
 	def is_installed(self, shutit):
-		return False
+		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 
 	def build(self, shutit):
 		shutit.send('mkdir /tmp/build/apr-util')
 		shutit.send('cd /tmp/build/apr-util')
 		shutit.send('curl http://apache.mirrors.timporter.net/apr/apr-util-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
-		shutit.send('cd apr-util*')
+		shutit.send('cd apr-util-*')
 		shutit.send('./configure --prefix=/usr --with-apr=/usr')
 		shutit.send('make')
 		shutit.send('make install')

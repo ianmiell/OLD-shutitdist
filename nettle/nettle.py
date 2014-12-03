@@ -13,19 +13,20 @@ class nettle(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/nettle')
 		shutit.send('cd /tmp/build/nettle')
-		shutit.send('curl -L http://ftp.gnu.org/gnu/nettle/nettle-2.7.1.tar.gz | tar -zxf -')
+		shutit.send('curl -L http://ftp.gnu.org/gnu/nettle/nettle-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('cd /tmp/build/nettle/nettle-*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		#shutit.send('chmod -v 755 /usr/lib/libhogweed.so.2.5 /usr/lib/libnettle.so.4.7')
-		shutit.send('install -v -m755 -d /usr/share/doc/nettle-2.7.1')
-		shutit.send('install -v -m644 nettle.html /usr/share/doc/nettle-2.7.1')
+		# Using earlier version due to dep issue, so ignoring these linux from scratch lines.
+		#shutit.send('chmod -v 755 /usr/lib/libhogweed.so.2.5 /usr/lib/libnettle.so.4.7') # requires gmp
+		#shutit.send('install -v -m755 -d /usr/share/doc/nettle-2.7.1')
+		#shutit.send('install -v -m644 nettle.html /usr/share/doc/nettle-2.7.1')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
+	def get_config(self, shutit):
+		shutit.get_config(self.module_id,'version','2.6')
+		return True
 
 	#def check_ready(self, shutit):
 	#	return True
@@ -47,9 +48,9 @@ class nettle(ShutItModule):
 
 def module():
 	return nettle(
-		'shutit.tk.sd.nettle.nettle', 158844782.00115325235,
+		'shutit.tk.sd.nettle.nettle', 158844782.20615325235,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.openssl.openssl','shutit.tk.sd.gmp.gmp','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.subversion.subversion','shutit.tk.sd.libxslt.libxslt']
 	)
 

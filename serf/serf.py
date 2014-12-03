@@ -8,7 +8,7 @@ class serf(ShutItModule):
 
 
 	def is_installed(self, shutit):
-		return False
+		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 
 	def build(self, shutit):
@@ -51,6 +51,6 @@ def module():
 		'shutit.tk.sd.serf.serf', 158844782.019351352461436,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.scons.scons']
+		depends=['shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.scons.scons','shutit.tk.sd.openssl.openssl']
 	)
 

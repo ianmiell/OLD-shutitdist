@@ -13,17 +13,19 @@ class tls(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/tls')
 		shutit.send('cd /tmp/build/tls')
-		shutit.send('curl -L ftp://ftp.gnutls.org/gcrypt/gnutls/v3.3/gnutls-3.3.7.tar.xz | xz -d | tar -xf -')
+		shutit.send('curl -L ftp://ftp.gnutls.org/gcrypt/gnutls/v' + shutit.cfg[self.module_id]['major_version'] + '/gnutls-' + shutit.cfg[self.module_id]['major_version'] + '.' + shutit.cfg[self.module_id]['minor_version'] + '.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd gnutls-*')
-		shutit.send(r"sed -i -e '201 i#ifdef ENABLE_PKCS11' -e '213 i#endif' lib/gnutls_privkey.c")
+		# Needed? Dep on version?
+		#shutit.send(r"sed -i -e '201 i#ifdef ENABLE_PKCS11' -e '213 i#endif' lib/gnutls_privkey.c")
 		shutit.send('./configure --prefix=/usr --with-default-trust-store-file=/etc/ssl/ca-bundle.crt')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
+	def get_config(self, shutit):
+		shutit.get_config(self.module_id,'major_version','3.1')
+		shutit.get_config(self.module_id,'minor_version','0')
+		return True
 
 	#def check_ready(self, shutit):
 	#	return True
@@ -45,9 +47,9 @@ class tls(ShutItModule):
 
 def module():
 	return tls(
-		'shutit.tk.sd.tls.tls', 158844782.01135236,
+		'shutit.tk.sd.tls.tls', 158844782.22135236,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.nettle.nettle','shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.sd.nettle.nettle']
 	)
 
