@@ -46,6 +46,6 @@ def module():
 		'shutit.tk.sd.less.less', 158844782.012413523,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.bison.bison']
+		depends=['shutit.tk.sd.bison.bison','shutit.tk.sd.ncurses.ncurses']
 	)
 

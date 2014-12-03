@@ -8,14 +8,13 @@ class bison(ShutItModule):
 
 
 	def is_installed(self, shutit):
-		return False
-
+		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/bison')
 		shutit.send('cd /tmp/build/bison')
 		version = shutit.cfg[self.module_id]['version']
-		shutit.send('wget http://ftp.gnu.org/gnu/bison/bison-' + version + '.tar.gz | tar -zxf -')
+		shutit.send('curl -L http://ftp.gnu.org/gnu/bison/bison-' + version + '.tar.gz | tar -zxf -')
 		shutit.send('cd bison*' + version)
 		shutit.send('./configure --prefix=/usr --with-libiconv-prefix=/usr')
 		shutit.send('make')
