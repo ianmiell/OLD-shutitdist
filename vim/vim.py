@@ -19,7 +19,7 @@ class vim(ShutItModule):
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('ln -sv vim /usr/bin/vi')
+		shutit.send('ln -svf vim /usr/bin/vi')
 		shutit.send('for L in  /usr/share/man/{,*/}man1/vim.1; do ln -sv vim.1 $(dirname $L)/vi.1; done')
 		shutit.send('ln -sv ../vim/vim74/doc /usr/share/doc/vim-7.4')
 		shutit.send('''cat > /etc/vimrc << "EOF"
