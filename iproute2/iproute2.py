@@ -45,9 +45,9 @@ class iproute2(ShutItModule):
 
 def module():
 	return iproute2(
-		'shutit.tk.sd.iproute2.iproute2', 158844782.01212523465,
+		'shutit.tk.sd.iproute2.iproute2', 158844782.012312523465,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.bison.bison']
+		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.bison.bison','shutit.tk.sd.flex.flex']
 	)
 

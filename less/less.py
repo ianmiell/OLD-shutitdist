@@ -14,6 +14,7 @@ class less(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/less')
 		shutit.send('cd /tmp/build/less')
 		shutit.send('curl -L http://www.greenwoodsoftware.com/less/less-458.tar.gz | tar -zxf -')
+		shutit.send('cd less*')
 		shutit.send('./configure --prefix=/usr --sysconfdir=/etc')
 		shutit.send('make')
 		shutit.send('make install')
