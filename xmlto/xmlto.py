@@ -35,7 +35,7 @@ class xmlto(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/xmlto')
+		#shutit.send('rm -rf /tmp/build/xmlto')
 		return True
 
 	#def remove(self, shutit):
@@ -46,9 +46,9 @@ class xmlto(ShutItModule):
 
 def module():
 	return xmlto(
-		'shutit.tk.sd.xmlto.xmlto', 158844782.01135135,
+		'shutit.tk.sd.xmlto.xmlto', 158844782.0124135135,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.docbookxsl.docbookxsl','shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.docbookxml.docbookxml']
 	)
 

@@ -38,7 +38,7 @@ class zlib(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/zlib')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):

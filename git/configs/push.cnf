@@ -10,7 +10,7 @@
 rm:false
 
 [repository]
-name:sb_git
+name:sd_git
 #push:yes
 # COPY THESE TO YOUR ~/.shutit/config FILE AND FILL OUT ITEMS IN CAPS
 #user:YOUR_USERNAME

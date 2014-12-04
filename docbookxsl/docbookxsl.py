@@ -13,8 +13,7 @@ class docbookxsl(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/docbookxsl')
 		shutit.send('cd /tmp/build/docbookxsl')
-		shutit.send('curl -L http://downloads.sourceforge.net/docbook/docbook-xsl-1.78.1.tar.bz2 | bunzip2 -c | tar -xf -')
-		shutit.send('cd docbook-*')
+		shutit.send('curl -L http://downloads.sourceforge.net/docbook/docbook-xsl-1.78.1.tar.bz2 | bunzip2 -c | tar -xf - --strip-components=1')
 		shutit.send('install -v -m755 -d /usr/share/xml/docbook/xsl-stylesheets-1.78.1')
 		shutit.send('cp -v -R VERSION common eclipse epub extensions fo highlighting html htmlhelp images javahelp lib manpages params profiling roundtrip slides template tests tools webhelp website xhtml xhtml-1_1 /usr/share/xml/docbook/xsl-stylesheets-1.78.1')
 		shutit.send('ln -s VERSION /usr/share/xml/docbook/xsl-stylesheets-1.78.1/VERSION.xsl')
@@ -26,9 +25,6 @@ class docbookxsl(ShutItModule):
 		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/1.78.1" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
 		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/current" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
 		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/current" "/usr/share/xml/docbook/xsl-stylesheets-1.78.1" /etc/xml/catalog')
-		shutit.send('xmlcatalog --noout --add "rewriteSystem" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
-		shutit.send('xmlcatalog --noout --add "rewriteURI" "http://docbook.sourceforge.net/release/xsl/<version>" "/usr/share/xml/docbook/xsl-stylesheets-<version>" /etc/xml/catalog')
-		shutit.send('cd')
 		return True
 
 	#def get_config(self, shutit):
@@ -45,7 +41,7 @@ class docbookxsl(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/docbookxsl')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
@@ -56,7 +52,7 @@ class docbookxsl(ShutItModule):
 
 def module():
 	return docbookxsl(
-		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.0112351235,
+		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.01112751235,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libxml2.libxml2']

@@ -33,7 +33,7 @@ class lxml(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/lxml')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):

@@ -35,7 +35,7 @@ class apache_portable_runtime(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/apr')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):

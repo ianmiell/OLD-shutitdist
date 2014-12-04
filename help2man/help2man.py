@@ -37,7 +37,7 @@ class help2man(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/help2man')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):

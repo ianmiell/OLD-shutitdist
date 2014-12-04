@@ -40,7 +40,7 @@ class python2(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/python')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
@@ -54,6 +54,6 @@ def module():
 		'shutit.tk.sd.python2.python2', 158844782.0012516436,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib']
+		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib','shutit.tk.sd.tcl.tcl']
 	)
 

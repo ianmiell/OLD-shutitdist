@@ -35,7 +35,7 @@ class flex(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/flex')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):

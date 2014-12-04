@@ -43,7 +43,7 @@ class tcl(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/tcl')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
@@ -54,9 +54,9 @@ class tcl(ShutItModule):
 
 def module():
 	return tcl(
-		'shutit.tk.sd.tcl.tcl', 158844782.012412352462,
+		'shutit.tk.sd.tcl.tcl', 158844782.0012412352462,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.setup.setup']
 	)
 

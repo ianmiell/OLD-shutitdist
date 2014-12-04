@@ -35,7 +35,7 @@ class libtool(ShutItModule):
 	#	return True
 
 	#def finalize(self, shutit):
-	#	shutit.send('rm -rf /opt/libtool')
+	#	#shutit.send('rm -rf
 	#	return True
 
 	#def remove(self, shutit):

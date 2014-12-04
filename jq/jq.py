@@ -35,7 +35,7 @@ class jq(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/jq')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
