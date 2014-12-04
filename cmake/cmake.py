@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.cmake.cmake', 158844782.014362242,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.curl.curl','shutit.tk.sd.libarchive.libarchive']
+		depends=['shutit.tk.sd.libarchive.libarchive']
 	)
 

@@ -4,18 +4,18 @@
 from shutit_module import ShutItModule
 
 
-class libarchive(ShutItModule):
+class groff(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/libarchive')
-		shutit.send('cd /tmp/build/libarchive')
-		shutit.send('curl -L http://www.libarchive.org/downloads/libarchive-3.1.2.tar.gz | tar -zxf -')
-		shutit.send('cd libarchive-*')
-		shutit.send('./configure --prefix=/usr --disable-static')
+		shutit.send('mkdir -p /tmp/build/groff')
+		shutit.send('cd /tmp/build/groff')
+		shutit.send('curl -L http://ftp.gnu.org/gnu/groff/groff-1.22.2.tar.gz | tar -zxf -')
+		shutit.send('cd groff*')
+		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -43,10 +43,10 @@ class libarchive(ShutItModule):
 	#	return True
 
 def module():
-	return libarchive(
-		'shutit.tk.sd.libarchive.libarchive', 158844782.012536246,
+	return groff(
+		'shutit.tk.sd.groff.groff', 158844782.011212531353,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.lzo.lzo','shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.setup.setup']
 	)
 
