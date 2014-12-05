@@ -122,7 +122,7 @@ class docbook(ShutItModule):
 
 def module():
 	return docbook(
-		'shutit.tk.sd.docbook.docbook', 158844782.01124918274,
+		'shutit.tk.sd.docbook.docbook', 158844782.0044,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.sgml_common.sgml_common','shutit.tk.sd.zip.zip']

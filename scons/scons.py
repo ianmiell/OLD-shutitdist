@@ -47,7 +47,7 @@ class scons(ShutItModule):
 
 def module():
 	return scons(
-		'shutit.tk.sd.scons.scons', 158844782.01926264346,
+		'shutit.tk.sd.scons.scons', 158844782.0069,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.zip.zip','shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.docbookxsl.docbookxsl','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libxslt.libxslt']

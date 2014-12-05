@@ -63,7 +63,7 @@ class openssl(ShutItModule):
 
 def module():
 	return openssl(
-		'shutit.tk.sd.openssl.openssl', 158844782.001012125,
+		'shutit.tk.sd.openssl.openssl', 158844782.0010,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.zlib.zlib']

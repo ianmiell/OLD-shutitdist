@@ -46,7 +46,7 @@ class git(ShutItModule):
 
 def module():
 	return git(
-		'shutit.tk.sd.git.git', 158844782.021125136,
+		'shutit.tk.sd.git.git', 158844782.0071,
 		description='Git built from source',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.zip.zip','shutit.tk.sd.tcl.tcl','shutit.tk.sd.expat.expat','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.openssl.openssl','shutit.tk.sd.gettext.gettext']

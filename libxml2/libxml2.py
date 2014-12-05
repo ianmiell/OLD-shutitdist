@@ -48,7 +48,7 @@ class libxml2(ShutItModule):
 
 def module():
 	return libxml2(
-		'shutit.tk.sd.libxml2.libxml2', 158844782.011125135,
+		'shutit.tk.sd.libxml2.libxml2', 158844782.0035,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.python2.python2']

@@ -43,7 +43,7 @@ class sthttpd(ShutItModule):
 
 def module():
 	return sthttpd(
-		'shutit.tk.sd.sthttpd.sthttpd', 158844782.1219187350,
+		'shutit.tk.sd.sthttpd.sthttpd', 158844782.0075,
 		description='Small lightweight web server',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.automake.automake','shutit.tk.sd.git.git','shutit.tk.sd.libxslt.libxslt']

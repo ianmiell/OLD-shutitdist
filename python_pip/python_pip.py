@@ -38,7 +38,7 @@ class python_pip(ShutItModule):
 
 def module():
 	return python_pip(
-		'shutit.tk.sd.python_pip.python_pip', 158844782.0191246184,
+		'shutit.tk.sd.python_pip.python_pip', 158844782.0068,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.zlib.zlib']

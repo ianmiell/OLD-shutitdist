@@ -44,7 +44,7 @@ class pkg_config(ShutItModule):
 
 def module():
 	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00100135213,
+		'shutit.tk.sd.pkg_config.pkg_config', 158844782.0006,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

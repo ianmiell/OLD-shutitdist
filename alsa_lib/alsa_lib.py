@@ -44,7 +44,7 @@ class alsa_lib(ShutItModule):
 
 def module():
 	return alsa_lib(
-		'shutit.tk.sd.alsa_lib.alsa_lib', 158844782.01651124,
+		'shutit.tk.sd.alsa_lib.alsa_lib', 158844782.0066,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.python2.python2']

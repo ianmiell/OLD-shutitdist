@@ -54,7 +54,7 @@ class tcl(ShutItModule):
 
 def module():
 	return tcl(
-		'shutit.tk.sd.tcl.tcl', 158844782.0012412352462,
+		'shutit.tk.sd.tcl.tcl', 158844782.002,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

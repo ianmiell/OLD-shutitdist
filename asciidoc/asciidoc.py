@@ -47,7 +47,7 @@ class asciidoc(ShutItModule):
 
 def module():
 	return asciidoc(
-		'shutit.tk.sd.asciidoc.asciidoc', 158844782.0125243623,
+		'shutit.tk.sd.asciidoc.asciidoc', 158844782.006,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.python2.python2']

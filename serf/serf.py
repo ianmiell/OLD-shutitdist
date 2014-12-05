@@ -48,7 +48,7 @@ class serf(ShutItModule):
 
 def module():
 	return serf(
-		'shutit.tk.sd.serf.serf', 158844782.019351352461436,
+		'shutit.tk.sd.serf.serf', 158844782.007,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.scons.scons','shutit.tk.sd.openssl.openssl']

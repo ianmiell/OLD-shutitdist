@@ -60,7 +60,7 @@ class vim(ShutItModule):
 
 def module():
 	return vim(
-		'shutit.tk.sd.vim.vim', 158844782.0112531353,
+		'shutit.tk.sd.vim.vim', 158844782.0045,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.ncurses.ncurses']

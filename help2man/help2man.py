@@ -48,7 +48,7 @@ class help2man(ShutItModule):
 
 def module():
 	return help2man(
-		'shutit.tk.sd.help2man.help2man', 158844782.01324135,
+		'shutit.tk.sd.help2man.help2man', 158844782.0064,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.texinfo.texinfo']

@@ -45,7 +45,7 @@ class giflib(ShutItModule):
 
 def module():
 	return giflib(
-		'shutit.tk.sd.giflib.giflib', 158844782.0124151353,
+		'shutit.tk.sd.giflib.giflib', 158844782.0057,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.xmlto.xmlto']

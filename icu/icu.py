@@ -46,7 +46,7 @@ class icu(ShutItModule):
 
 def module():
 	return icu(
-		'shutit.tk.sd.icu.icu', 158844782.0101297592835,
+		'shutit.tk.sd.icu.icu', 158844782.0032,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

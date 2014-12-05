@@ -46,7 +46,7 @@ class pcre(ShutItModule):
 
 def module():
 	return pcre(
-		'shutit.tk.sd.pcre.pcre', 158844782.010025135,
+		'shutit.tk.sd.pcre.pcre', 158844782.0028,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.bzip2.bzip2','shutit.tk.sd.readline.readline']

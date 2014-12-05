@@ -3,7 +3,6 @@
 
 from shutit_module import ShutItModule
 
-
 class which(ShutItModule):
 
 
@@ -44,7 +43,7 @@ class which(ShutItModule):
 
 def module():
 	return which(
-		'shutit.tk.sd.which.which', 158844782.001132592835,
+		'shutit.tk.sd.which.which', 158844782.0015,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

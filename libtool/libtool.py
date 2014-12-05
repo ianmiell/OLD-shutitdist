@@ -46,7 +46,7 @@ class libtool(ShutItModule):
 
 def module():
 	return libtool(
-		'shutit.tk.sd.libtool.libtool', 158844782.0225135124,
+		'shutit.tk.sd.libtool.libtool', 158844782.0073,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.help2man.help2man','shutit.tk.sd.texinfo.texinfo','shutit.tk.sd.automake.automake','shutit.tk.sd.git.git','shutit.tk.sd.libxslt.libxslt']

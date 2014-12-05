@@ -45,7 +45,7 @@ class libxslt(ShutItModule):
 
 def module():
 	return libxslt(
-		'shutit.tk.sd.libxslt.libxslt', 158844782.01231251324,
+		'shutit.tk.sd.libxslt.libxslt', 158844782.0052,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libxml2.libxml2']

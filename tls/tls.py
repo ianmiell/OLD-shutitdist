@@ -47,7 +47,7 @@ class tls(ShutItModule):
 
 def module():
 	return tls(
-		'shutit.tk.sd.tls.tls', 158844782.22135236,
+		'shutit.tk.sd.tls.tls', 158844782.0080,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.nettle.nettle']

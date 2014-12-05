@@ -46,7 +46,7 @@ class apache_portable_runtime_util(ShutItModule):
 
 def module():
 	return apache_portable_runtime_util(
-		'shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util', 158844782.0121546246,
+		'shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util', 158844782.005,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.apache_portable_runtime.apache_portable_runtime']

@@ -46,7 +46,7 @@ class yacc(ShutItModule):
 
 def module():
 	return yacc(
-		'shutit.tk.sd.yacc.yacc', 158844782.0121325,
+		'shutit.tk.sd.yacc.yacc', 158844782.0048,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

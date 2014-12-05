@@ -45,7 +45,7 @@ class gmp(ShutItModule):
 
 def module():
 	return gmp(
-		'shutit.tk.sd.gmp.gmp', 158844782.001111513985173285,
+		'shutit.tk.sd.gmp.gmp', 158844782.0013,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

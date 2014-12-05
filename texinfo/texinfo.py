@@ -44,7 +44,7 @@ class texinfo(ShutItModule):
 
 def module():
 	return texinfo(
-		'shutit.tk.sd.texinfo.texinfo', 158844782.0012135264,
+		'shutit.tk.sd.texinfo.texinfo', 158844782.0018,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

@@ -46,7 +46,7 @@ class automake(ShutItModule):
 
 def module():
 	return automake(
-		'shutit.tk.sd.automake.automake', 158844782.001010113251352435,
+		'shutit.tk.sd.automake.automake', 158844782.0008,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.autoconf.autoconf']

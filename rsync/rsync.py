@@ -46,7 +46,7 @@ class rsync(ShutItModule):
 
 def module():
 	return rsync(
-		'shutit.tk.sd.rsync.rsync', 158844782.010125,
+		'shutit.tk.sd.rsync.rsync', 158844782.003,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

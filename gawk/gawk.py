@@ -44,7 +44,7 @@ class gawk(ShutItModule):
 
 def module():
 	return gawk(
-		'shutit.tk.sd.gawk.gawk', 158844782.01111255322531353,
+		'shutit.tk.sd.gawk.gawk', 158844782.0033,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

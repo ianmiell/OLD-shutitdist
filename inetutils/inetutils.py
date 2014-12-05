@@ -48,7 +48,7 @@ class inetutils(ShutItModule):
 
 def module():
 	return inetutils(
-		'shutit.tk.sd.inetutils.inetutils', 158844782.011992531353,
+		'shutit.tk.sd.inetutils.inetutils', 158844782.0047,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

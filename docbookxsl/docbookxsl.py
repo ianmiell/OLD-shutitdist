@@ -52,7 +52,7 @@ class docbookxsl(ShutItModule):
 
 def module():
 	return docbookxsl(
-		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.01112751235,
+		'shutit.tk.sd.docbookxsl.docbookxsl', 158844782.0037,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libxml2.libxml2']

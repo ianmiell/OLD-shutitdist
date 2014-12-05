@@ -49,7 +49,7 @@ class sgml_common(ShutItModule):
 
 def module():
 	return sgml_common(
-		'shutit.tk.sd.sgml_common.sgml_common', 158844782.01111332513136,
+		'shutit.tk.sd.sgml_common.sgml_common', 158844782.0034,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

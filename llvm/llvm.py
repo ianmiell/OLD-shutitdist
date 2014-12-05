@@ -45,7 +45,7 @@ class llvm(ShutItModule):
 
 def module():
 	return llvm(
-		'shutit.tk.sd.llvm.llvm', 158844782.011241253,
+		'shutit.tk.sd.llvm.llvm', 158844782.0043,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.python2.python2']

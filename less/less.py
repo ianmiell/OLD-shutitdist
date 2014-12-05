@@ -44,7 +44,7 @@ class less(ShutItModule):
 
 def module():
 	return less(
-		'shutit.tk.sd.less.less', 158844782.012413523,
+		'shutit.tk.sd.less.less', 158844782.0056,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.bison.bison','shutit.tk.sd.ncurses.ncurses']

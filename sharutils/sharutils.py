@@ -44,7 +44,7 @@ class sharutils(ShutItModule):
 
 def module():
 	return sharutils(
-		'shutit.tk.sd.sharutils.sharutils', 158844782.0011012415,
+		'shutit.tk.sd.sharutils.sharutils', 158844782.0012,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

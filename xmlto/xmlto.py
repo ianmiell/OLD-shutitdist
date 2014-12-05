@@ -46,7 +46,7 @@ class xmlto(ShutItModule):
 
 def module():
 	return xmlto(
-		'shutit.tk.sd.xmlto.xmlto', 158844782.0124135135,
+		'shutit.tk.sd.xmlto.xmlto', 158844782.0055,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.docbookxsl.docbookxsl','shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.docbookxml.docbookxml']

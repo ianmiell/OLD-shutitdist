@@ -46,7 +46,7 @@ class flex(ShutItModule):
 
 def module():
 	return flex(
-		'shutit.tk.sd.flex.flex', 158844782.0122515332,
+		'shutit.tk.sd.flex.flex', 158844782.0051,
 		description='Flex',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

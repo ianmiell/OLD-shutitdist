@@ -43,7 +43,7 @@ class go(ShutItModule):
 
 def module():
 	return go(
-		'shutit.tk.sd.go.go', 158844782.1346356,
+		'shutit.tk.sd.go.go', 158844782.0077,
 		description='Go language setup (direct from source)',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

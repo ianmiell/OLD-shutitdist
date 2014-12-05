@@ -45,7 +45,7 @@ class gettext(ShutItModule):
 
 def module():
 	return gettext(
-		'shutit.tk.sd.gettext.gettext', 158844782.0124125236240,
+		'shutit.tk.sd.gettext.gettext', 158844782.0054,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

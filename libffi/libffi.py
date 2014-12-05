@@ -47,7 +47,7 @@ class libffi(ShutItModule):
 
 def module():
 	return libffi(
-		'shutit.tk.sd.libffi.libffi', 158844782.00121135,
+		'shutit.tk.sd.libffi.libffi', 158844782.0016,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

@@ -46,7 +46,7 @@ class jq(ShutItModule):
 
 def module():
 	return jq(
-		'shutit.tk.sd.jq.jq', 158844782.11258107521,
+		'shutit.tk.sd.jq.jq', 158844782.0074,
 		description='JQ - sed for JSON',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.git.git','shutit.tk.sd.libtool.libtool','shutit.tk.sd.onigurama.onigurama','shutit.tk.sd.flex.flex']

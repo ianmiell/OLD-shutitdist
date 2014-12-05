@@ -50,7 +50,7 @@ class libssl(ShutItModule):
 
 def module():
 	return libssl(
-		'shutit.tk.sd.libssl.libssl', 158844782.010125136,
+		'shutit.tk.sd.libssl.libssl', 158844782.0031,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.zlib.zlib']

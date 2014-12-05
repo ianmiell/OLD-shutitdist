@@ -44,7 +44,7 @@ class groff(ShutItModule):
 
 def module():
 	return groff(
-		'shutit.tk.sd.groff.groff', 158844782.011212531353,
+		'shutit.tk.sd.groff.groff', 158844782.0041,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

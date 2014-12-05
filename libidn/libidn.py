@@ -44,7 +44,7 @@ class libidn(ShutItModule):
 
 def module():
 	return libidn(
-		'shutit.tk.sd.libidn.libidn', 158844782.00121342,
+		'shutit.tk.sd.libidn.libidn', 158844782.0017,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

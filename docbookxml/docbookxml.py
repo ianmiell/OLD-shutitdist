@@ -87,7 +87,7 @@ class docbookxml(ShutItModule):
 
 def module():
 	return docbookxml(
-		'shutit.tk.sd.docbookxml.docbookxml', 158844782.0112351235,
+		'shutit.tk.sd.docbookxml.docbookxml', 158844782.0042,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.zip.zip']

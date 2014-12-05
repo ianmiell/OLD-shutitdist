@@ -49,7 +49,7 @@ class zlib(ShutItModule):
 
 def module():
 	return zlib(
-		'shutit.tk.sd.zlib.zlib', 158844782.001011326125136,
+		'shutit.tk.sd.zlib.zlib', 158844782.0009,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.automake.automake']

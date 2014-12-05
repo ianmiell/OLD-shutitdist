@@ -44,7 +44,7 @@ class cmake(ShutItModule):
 
 def module():
 	return cmake(
-		'shutit.tk.sd.cmake.cmake', 158844782.014362242,
+		'shutit.tk.sd.cmake.cmake', 158844782.0065,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libarchive.libarchive']

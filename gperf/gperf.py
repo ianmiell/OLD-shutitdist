@@ -45,7 +45,7 @@ class gperf(ShutItModule):
 
 def module():
 	return gperf(
-		'shutit.tk.sd.gperf.gperf', 158844782.01121251,
+		'shutit.tk.sd.gperf.gperf', 158844782.004,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

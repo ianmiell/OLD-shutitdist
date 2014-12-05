@@ -51,7 +51,7 @@ class subversion(ShutItModule):
 
 def module():
 	return subversion(
-		'shutit.tk.sd.subversion.subversion', 158844782.205532473,
+		'shutit.tk.sd.subversion.subversion', 158844782.0078,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.sqlite.sqlite','shutit.tk.sd.serf.serf','shutit.tk.sd.autoconf.autoconf']

@@ -46,7 +46,7 @@ class bison(ShutItModule):
 
 def module():
 	return bison(
-		'shutit.tk.sd.bison.bison', 158844782.0111961124124756,
+		'shutit.tk.sd.bison.bison', 158844782.0039,
 		description='Bison compilation',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

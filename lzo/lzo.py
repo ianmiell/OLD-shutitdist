@@ -44,7 +44,7 @@ class lzo(ShutItModule):
 
 def module():
 	return lzo(
-		'shutit.tk.sd.lzo.lzo', 158844782.0010012984175,
+		'shutit.tk.sd.lzo.lzo', 158844782.0005,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

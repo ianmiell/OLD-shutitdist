@@ -46,7 +46,7 @@ class onigurama(ShutItModule):
 
 def module():
 	return onigurama(
-		'shutit.tk.sd.onigurama.onigurama', 158844782.01011251353136,
+		'shutit.tk.sd.onigurama.onigurama', 158844782.0029,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

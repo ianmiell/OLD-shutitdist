@@ -45,7 +45,7 @@ class sqlite(ShutItModule):
 
 def module():
 	return sqlite(
-		'shutit.tk.sd.sqlite.sqlite', 158844782.01,
+		'shutit.tk.sd.sqlite.sqlite', 158844782.0027,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']

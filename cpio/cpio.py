@@ -45,7 +45,7 @@ class cpio(ShutItModule):
 
 def module():
 	return cpio(
-		'shutit.tk.sd.cpio.cpio', 158844782.0011252345,
+		'shutit.tk.sd.cpio.cpio', 158844782.0014,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']

@@ -51,7 +51,7 @@ class python2(ShutItModule):
 
 def module():
 	return python2(
-		'shutit.tk.sd.python2.python2', 158844782.0012516436,
+		'shutit.tk.sd.python2.python2', 158844782.0021,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib','shutit.tk.sd.tcl.tcl']
