@@ -14,7 +14,7 @@ class expat(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/expat')
 		shutit.send('cd /tmp/build/expat')
-		shutit.send('curl -L expat.tar.gz http://downloads.sourceforge.net/project/expat/expat/' + shutit.cfg[self.module_id]['version'] + '/expat-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
+		shutit.send('curl -L http://downloads.sourceforge.net/project/expat/expat/' + shutit.cfg[self.module_id]['version'] + '/expat-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('cd expat-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
