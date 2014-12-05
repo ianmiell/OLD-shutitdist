@@ -46,7 +46,7 @@ class expat(ShutItModule):
 
 def module():
 	return expat(
-		'shutit.tk.sd.expat.expat', 158844782.0059,
+		'shutit.tk.sd.expat.expat', 158844782.00195,
 		description='',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.setup.setup']
