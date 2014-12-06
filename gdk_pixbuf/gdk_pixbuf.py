@@ -17,6 +17,7 @@ class gdk_pixbuf(ShutItModule):
 		shutit.send('cd gdk-pixbuf*')
 		shutit.send('./configure --prefix=/usr --with-x11')
 		shutit.send('make')
+		shutit.send('make install')
 		return True
 
 	#def get_config(self, shutit):

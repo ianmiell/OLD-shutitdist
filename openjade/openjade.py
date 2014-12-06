@@ -13,7 +13,7 @@ class openjade(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/openjade')
 		shutit.send('cd /tmp/build/openjade')
-		shutit.send('curl -L http://downloads.sourceforge.net/openjade/openjade-1.3.2.tar.gz | tar -xf -')
+		shutit.send('curl -L http://downloads.sourceforge.net/openjade/openjade-1.3.2.tar.gz | tar -zxf -')
 		shutit.send('cd openjade*')
 		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/7.6/openjade-1.3.2-gcc_4.6-1.patch | patch -Np1 -i -')
 		shutit.send('''sed -i -e '/getopts/{N;s#&G#g#;s#do .getopts.pl.;##;}' -e '/use POSIX/ause Getopt::Std;' msggen.pl''')
