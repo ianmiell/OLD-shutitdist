@@ -13,7 +13,7 @@ class lcms(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/lcms')
 		shutit.send('cd /tmp/build/lcms')
-		shutit.send('curl -L http://downloads.sourceforge.net/lcms/lcms2-2.6.tar.gz | xz -d | tar -xf -')
+		shutit.send('curl -L http://downloads.sourceforge.net/lcms/lcms2-2.6.tar.gz | tar -zxf -')
 		shutit.send('cd lcms*')
 		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
