@@ -17,7 +17,7 @@ class freetype2(ShutItModule):
 		shutit.send('cd freetype*')
 		shutit.send('sed -i  -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" modules.cfg')
 		shutit.send(r'''sed -ri -e 's:.*(#.*SUBPIXEL.*) .*:\1:' include/config/ftoption.h''')
-		shutit.send('./configure --prefix=/usr --disable-static --without-harfbuzz')
+		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.freetype2.freetype2', 158844782.0098,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.which.which','shutit.tk.sd.harfbuzz.harfbuzz','shutit.tk.sd.libpng.libpng','shutit.tk.sd.glib.glib']
+		depends=['shutit.tk.sd.which.which','shutit.tk.sd.harfbuzz.harfbuzz','shutit.tk.sd.libpng.libpng','shutit.tk.sd.glib.glib','shutit.tk.sd.freetype.freetype']
 	)
 

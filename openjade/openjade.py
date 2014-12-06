@@ -55,7 +55,7 @@ class openjade(ShutItModule):
 
 def module():
 	return openjade(
-		'shutit.tk.sd.openjade.openjade', 158844782.00104,
+		'shutit.tk.sd.openjade.openjade', 158844782.0104,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.opensp.opensp']
