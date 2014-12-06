@@ -50,6 +50,6 @@ def module():
 		'shutit.tk.sd.gtk2.gtk2', 158844782.0120,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.atk','shutit.tk.sd.gdk_pixbuf.gdk_pixbuf','shutit.tk.sd.pango.pango']
+		depends=['shutit.tk.sd.atk.atk','shutit.tk.sd.gdk_pixbuf.gdk_pixbuf','shutit.tk.sd.pango.pango']
 	)
 

@@ -1,5 +1,4 @@
 """ShutIt module. See http://shutit.tk
-In source, line 16 should be blank, within the build def. This doesn't matter except for test builds, so can be removed once in use.
 """
 
 from shutit_module import ShutItModule
@@ -12,6 +11,21 @@ class berkeleydb(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
+#http://download.oracle.com/berkeley-db/db-6.1.19.tar.gz
+#cd build_unix                        &&
+#../dist/configure --prefix=/usr      \
+#                  --enable-compat185 \
+#                  --enable-dbm       \
+#                  --disable-static   \
+#                  --enable-cxx       &&
+#make
+#make docdir=/usr/share/doc/db-6.1.19 install &&
+#chown -v -R root:root                        \
+#      /usr/bin/db_*                          \
+#      /usr/include/db{,_185,_cxx}.h          \
+#      /usr/lib/libdb*.{so,la}                \
+#      /usr/share/doc/db-6.1.19
+
 
 		return True
 
@@ -42,6 +56,6 @@ def module():
 		'shutit.tk.sd.berkeleydb.berkeleydb', 158844782.0011,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.sharutils.sharutils']
 	)
 
