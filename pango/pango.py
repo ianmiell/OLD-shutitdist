@@ -16,6 +16,8 @@ class pango(ShutItModule):
 		shutit.send('curl -L http://ftp.gnome.org/pub/gnome/sources/pango/1.36/pango-1.36.7.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd pango*')
 		shutit.send('./configure --prefix=/usr --sysconfdir=/etc')
+		shutit.send('make')
+		shutit.send('make install')
 		return True
 
 	#def get_config(self, shutit):
