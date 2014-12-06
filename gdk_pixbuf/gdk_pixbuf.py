@@ -44,7 +44,7 @@ class gdk_pixbuf(ShutItModule):
 
 def module():
 	return gdk_pixbuf(
-		'shutit.tk.sd.gdk_pixbuf.gdk_pixbuf', 158844782.0115,
+		'shutit.tk.sd.gdk_pixbuf.gdk_pixbuf', 158844782.01195,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.glib.glib','shutit.tk.sd.libjpeg.libjpeg','shutit.tk.sd.libpng.libpng','shutit.tk.sd.libtiff.libtiff','shutit.tk.sd.xorg_libs.xorg_libs']

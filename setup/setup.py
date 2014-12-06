@@ -16,7 +16,7 @@ class setup(ShutItModule):
 		shutit.install('libcurl4-openssl-dev')
 		shutit.install('m4') # do we need this?
 		shutit.install('strace') # remove later, for debug
-		shutit.install('xterm') # remove later, for debug (resize)
+		#shutit.install('xterm') # remove later, for debug (resize)
 		shutit.remove('libxml2') # old version
 		# libglib2.0-0 #libglib2.0-0:amd64 #libglib2.0-data # REMOVE?
 		shutit.send('echo "ShutIt Distro version 0.1" > /etc/issue')
