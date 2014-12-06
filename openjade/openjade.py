@@ -58,6 +58,6 @@ def module():
 		'shutit.tk.sd.openjade.openjade', 158844782.0104,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.opensp.opensp']
+		depends=['shutit.tk.sd.opensp.opensp','shutit.tk.sd.automake.automake']
 	)
 
