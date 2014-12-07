@@ -20,6 +20,8 @@ class ant(ShutItModule):
 		shutit.send('cp -v ../junit-4.11.jar hamcrest-1.3/hamcrest-core-1.3.jar lib/optional')
 		shutit.send('./build.sh -Ddist.dir=/opt/ant-1.9.4 dist')
 		shutit.send('ln -v -sfn ant-1.9.4 /opt/ant')
+		shutit.add_to_bashrc('export PATH=$PATH:/opt/ant/bin')
+		shutit.add_to_bashrc('export ANT_HOME=/opt/ant')
 		return True
 
 	#def get_config(self, shutit):
