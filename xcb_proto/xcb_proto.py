@@ -12,6 +12,8 @@ class xcb_proto(ShutItModule):
 	def build(self, shutit):
 		import sd_util
 		sd_util.setup_x_environment(shutit)
+		shutit.send('mkdir -p /tmp/build/xcb_proto')
+		shutit.send('cd /tmp/build/xcb_proto')
 		shutit.send('curl -L http://xcb.freedesktop.org/dist/xcb-proto-1.11.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd xcb-proto*')
 		shutit.send('./configure $XORG_CONFIG')

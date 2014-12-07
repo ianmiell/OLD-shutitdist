@@ -19,8 +19,8 @@ class java_binary(ShutItModule):
 		shutit.send('chown -R root:root /opt/OpenJDK-1.7.0.65-bin')
 
 		shutit.add_to_bashrc('export CLASSPATH=.:/usr/share/java')
-		shutit.add_to_bashrc('export JAVA_HOME=/opt/OpenJDK-1.7.0.65-bin')
-		shutit.add_to_bashrc('export PATH="$PATH:/opt/OpenJDK-1.7.0.65-bin/bin"')
+		shutit.add_to_bashrc('export JAVA_HOME=/opt/OpenJDK-1.7.0.65-bin/OpenJDK-1.7.0.65-x86_64-bin')
+		shutit.add_to_bashrc('export PATH="$PATH:/opt/OpenJDK-1.7.0.65-bin/OpenJDK-1.7.0.65-x86_64-bin/bin"',match_regexp='^export.PATH=..PATH:/opt/OpenJDK.*$')
 		return True
 
 	#def get_config(self, shutit):

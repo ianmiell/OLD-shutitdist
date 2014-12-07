@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.ant.ant', 158844782.0123,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.java_binary']
+		depends=['shutit.tk.sd.java_binary.java_binary']
 	)
 

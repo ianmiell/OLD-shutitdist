@@ -44,9 +44,9 @@ class lxml(ShutItModule):
 
 def module():
 	return lxml(
-		'shutit.tk.sd.lxml.lxml', 158844782.0046,
+		'shutit.tk.sd.lxml.lxml', 158844782.00525,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.libxslt']
+		depends=['shutit.tk.sd.libxslt.libxslt']
 	)
 
