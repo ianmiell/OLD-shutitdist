@@ -14,7 +14,7 @@ class ant(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/ant')
 		shutit.send('cd /tmp/build/ant')
 		shutit.send('curl -L http://archive.apache.org/dist/ant/source/apache-ant-1.9.4-src.tar.bz2 | bunzip2 -c | tar -xf -')
-		shutit.send('curl -L http://anduin.linuxfromscratch.org/sources/other/junit-4.11.jar > junit-4.11.tar')
+		shutit.send('curl -L http://anduin.linuxfromscratch.org/sources/other/junit-4.11.jar > junit-4.11.jar')
 		shutit.send('cd apache-ant*')
 		shutit.send('curl -L http://hamcrest.googlecode.com/files/hamcrest-1.3.tgz | tar -zxf -')
 		shutit.send('cp -v ../junit-4.11.jar hamcrest-1.3/hamcrest-core-1.3.jar lib/optional')
