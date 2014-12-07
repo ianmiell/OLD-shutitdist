@@ -11,17 +11,45 @@ class openjdk(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-#http://icedtea.classpath.org/download/source/icedtea-2.5.2.tar.xz | xz -d | tar -xf -
-#http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-add_cacerts-1.patch
-#http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fixed_paths-1.patch
-#http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fix_new_giflib-1.patch
-#http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fix_tests-1.patch
-#https://github.com/downloads/mozilla/rhino/rhino1_7R4.zip
-#http://icedtea.classpath.org/download/source/icedtea-web-1.5.1.tar.gz
-#Required Dependencies
-#An existing binary ( Java-1.7.0.65 or an earlier built version of this package), alsa-lib-1.0.28, apache-ant-1.9.4, Certificate Authority Certificates, cpio-2.11, Cups-1.7.5, GTK+-2.24.24, giflib-5.1.0, UnZip-6.0, Wget-1.15, Which-2.20, Xorg Libraries, and Zip-3.0 
-
-
+		shutit.send('mkdir -p /tmp/build/openbetjdk')
+		shutit.send('cd /tmp/build/openbetjdk')
+		shutit.send('curl -L http://icedtea.classpath.org/download/source/icedtea-2.5.2.tar.xz | xz -d | tar -xf -')
+		shutit.send('curl -L http://icedtea.classpath.org/download/source/icedtea-web-1.5.1.tar.gz | tar -zxf -')
+		shutit.send('cd icedtea-2*')
+		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-add_cacerts-1.patch > ../icedtea-2.5.2-add_cacerts-1.patch')
+		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fixed_paths-1.patch > ../icedtea-2.5.2-fixed_paths-1.patch')
+		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fix_new_giflib-1.patch > ../icedtea-2.5.2-fix_new_giflib-1.patch')
+		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/7.6/icedtea-2.5.2-fix_tests-1.patch > ../icedtea-2.5.2-fix_tests-1.patch')
+		shutit.send('curl -L https://github.com/downloads/mozilla/rhino/rhino1_7R4.zip > ../rhino1_7R4.zip')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/corba.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/hotspot.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/openjdk.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/jaxp.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/jaxws.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/langtools.tar.bz2')
+		shutit.send('wget http://anduin.linuxfromscratch.org/files/BLFS/OpenJDK-1.7.0.65-2.5.2/jdk.tar.bz2')
+		shutit.send('unzip ../rhino1_7R4.zip')
+		shutit.send('install -v -d -m755 /usr/share/java')
+		shutit.send('install -v -m755 rhino1_7R4/*.jar /usr/share/java')
+		shutit.send('patch -Np1 -i ../icedtea-2.5.2-add_cacerts-1.patch')
+		shutit.send('patch -Np1 -i ../icedtea-2.5.2-fixed_paths-1.patch')
+		shutit.send('patch -Np1 -i ../icedtea-2.5.2-fix_new_giflib-1.patch')
+		shutit.send('patch -Np1 -i ../icedtea-2.5.2-fix_tests-1.patch')
+#Before proceeding, you should ensure that your environment is properly set for building OpenJDK. First, review the content of the ANT_HOME variable. Second, the PATH variable should contain the paths to the java and ant executables. Last, the CLASSPATH variable should be set as explained on the Java-1.7.0.65 and JUnit-4.11 pages. 
+#install procps?
+#install findutils
+		shutit.send('mkdir -p /usr/include/attr') # required to allow us to find the header file
+		shutit.send('ln -s /usr/include/linux/xattr.h /usr/include/attr/xattr.h') # required to allow us to find the header file
+		shutit.send('unset JAVA_HOME')
+		shutit.send('./autogen.sh')
+		shutit.send('./configure --with-jdk-home=/opt/OpenJDK-1.7.0.65-bin/OpenJDK-1.7.0.65-x86_64-bin --with-version-suffix=BLFS --enable-nss --disable-system-kerberos --with-parallel-jobs ')
+		shutit.send('make')
+		shutit.send('chmod 0644 openjdk.build/j2sdk-image/lib/sa-jdi.jar')
+		shutit.send('cp -R openjdk.build/j2sdk-image /opt/OpenJDK-1.7.0.65')
+		shutit.send('chown -R root:root /opt/OpenJDK-1.7.0.65')
+# TODO set up which jdk we want to use
+#  There are now two OpenJDK SDKs installed in /opt. You should decide on which one you would like to use as the default. For example if you decide to use the precompiled OpenJDK, do the following as the root user:
+#ln -v -nsf OpenJDK-1.7.0.65-bin /opt/jdk
 		return True
 
 	#def get_config(self, shutit):
@@ -46,11 +74,12 @@ class openjdk(ShutItModule):
 	#def test(self, shutit):
 	#	return True
 
+# TODO: NSS? 
 def module():
 	return openjdk(
-		'shutit.tk.sd.openjdk.openjdk', 158844782.00,
+		'shutit.tk.sd.openjdk.openjdk', 158844782.0132,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.ant.ant','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.giflib.giflib','shutit.tk.sd.zip.zip','shutit.tk.sd.wget.wget','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.junit.junit','shutit.tk.sd.nss.nss','shutit.tk.sd.findutils.findutils']
 	)
 

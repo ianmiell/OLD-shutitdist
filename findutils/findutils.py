@@ -4,24 +4,21 @@
 from shutit_module import ShutItModule
 
 
-class setup(ShutItModule):
+class findutils(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.install('build-essential')
-		shutit.install('curl')
-		shutit.install('libcurl4-openssl-dev')
-		shutit.install('m4') # do we need this?
-		shutit.install('strace') # remove later, for debug
-		#shutit.install('xterm') # remove later, for debug (resize)
-		shutit.remove('libxml2') # old version
-		# libglib2.0-0 #libglib2.0-0:amd64 #libglib2.0-data # REMOVE?
-		shutit.send('echo "ShutIt Distro version 0.1" > /etc/issue')
-		# Some builds expect head in /bin
-		shutit.send('mv -v /usr/bin/head /bin/head')
+		shutit.send('mkdir -p /tmp/build/findutils')
+		shutit.send('cd /tmp/build/findutils')
+		shutit.send('curl -L http://ftp.gnu.org/gnu/findutils/findutils-4.4.2.tar.gz | tar -zxf -')
+		shutit.send('cd findutils*')
+		shutit.send('./configure --prefix=/usr --localstatedir=/var/lib/locate')
+		shutit.send('make')
+		shutit.send('make install')
+		shutit.send('mv -v /usr/bin/find /bin')
 		return True
 
 	#def get_config(self, shutit):
@@ -47,10 +44,10 @@ class setup(ShutItModule):
 	#	return True
 
 def module():
-	return setup(
-		'shutit.tk.sd.setup.setup', 158844782.0003,
+	return findutils(
+		'shutit.tk.sd.findutils.findutils', 158844782.00102,
 		description='',
-		maintainer='ian.miell@gmail.com',
+		maintainer='',
 		depends=['shutit.tk.sd.setup.setup']
 	)
 

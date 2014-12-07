@@ -11,22 +11,14 @@ class berkeleydb(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-#http://download.oracle.com/berkeley-db/db-6.1.19.tar.gz
-#cd build_unix                        &&
-#../dist/configure --prefix=/usr      \
-#                  --enable-compat185 \
-#                  --enable-dbm       \
-#                  --disable-static   \
-#                  --enable-cxx       &&
-#make
-#make docdir=/usr/share/doc/db-6.1.19 install &&
-#chown -v -R root:root                        \
-#      /usr/bin/db_*                          \
-#      /usr/include/db{,_185,_cxx}.h          \
-#      /usr/lib/libdb*.{so,la}                \
-#      /usr/share/doc/db-6.1.19
-
-
+		shutit.send('mkdir -p /tmp/build/berkeleydb')
+		shutit.send('cd /tmp/build/berkeleydb')
+		shutit.send('curl -L http://download.oracle.com/berkeley-db/db-6.1.19.tar.gz | tar -zxf -')
+		shutit.send('cd build_unix')
+		shutit.send('../dist/configure --prefix=/usr --enable-compat185 --enable-dbm --disable-static --enable-cxx')
+		shutit.send('make')
+		shutit.send('make docdir=/usr/share/doc/db-6.1.19 install')
+		shutit.send('chown -v -R root:root /usr/bin/db_* /usr/include/db{,_185,_cxx}.h /usr/lib/libdb*.{so,la} /usr/share/doc/db-6.1.19')
 		return True
 
 	#def get_config(self, shutit):
@@ -53,7 +45,7 @@ class berkeleydb(ShutItModule):
 
 def module():
 	return berkeleydb(
-		'shutit.tk.sd.berkeleydb.berkeleydb', 158844782.0011,
+		'shutit.tk.sd.berkeleydb.berkeleydb', 158844782.0133,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.sharutils.sharutils']
