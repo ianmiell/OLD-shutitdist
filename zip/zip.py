@@ -14,9 +14,10 @@ class zip(ShutItModule):
 	def build(self, shutit):
 		#http://www.info-zip.org/Zip.html 
 		shutit.send('mkdir -p /tmp/build/zip')
-		shutit.send_host_file('/tmp/build/zip/unzip60.tar.gz','context/unzip60.tar.gz')
+		shutit.send_host_file('/tmp/build/zip/unzip60.tar.xz','context/unzip60.tar.xz')
 		shutit.send('cd /tmp/build/zip')
-		shutit.send('tar -zxf unzip60.tar.gz')
+		shutit.send('xz -d unzip60.tar.xz')
+		shutit.send('tar -xf unzip60.tar')
 		shutit.send('cd unzip60')
 		shutit.send('make -f unix/Makefile IZ_BZIP2=/opt/bzip2/bzip2-1.0.6 IZ_ZLIB=../../zlib/zlib-1.2.5 generic')
 		shutit.send('make -f unix/Makefile install')

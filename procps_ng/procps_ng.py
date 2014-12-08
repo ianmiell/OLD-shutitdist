@@ -13,8 +13,8 @@ class procps_ng(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/procps_ng')
 		shutit.send('cd /tmp/build/procps_ng')
-		shutit.send('curl -L http://procps_nggraphics.org/releases/procps_ng-1.12.16.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd procps_ng*')
+		shutit.send('curl -L http://sourceforge.net/projects/procps-ng/files/Production/procps-ng-3.3.10.tar.xz | xz -d | tar -xf -')
+		shutit.send('cd procps-ng*')
 		shutit.send('./configure --prefix=/usr --exec-prefix= --libdir=/usr/lib --docdir=/usr/share/doc/procps-ng-3.3.10 --disable-static --disable-kill')
 		shutit.send('make')
 		shutit.send(r'''sed -i -r 's|(pmap_initname)\\\$|\1|' testsuite/pmap.test/pmap.exp''')
@@ -49,9 +49,9 @@ class procps_ng(ShutItModule):
 
 def module():
 	return procps_ng(
-		'shutit.tk.sd.procps_ng.procps_ng', 158844782.00101,
+		'shutit.tk.sd.procps_ng.procps_ng', 158844782.00251,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.ncurses.ncurses']
 	)
 

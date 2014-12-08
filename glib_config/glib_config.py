@@ -15,6 +15,9 @@ class glib_config(ShutItModule):
 		shutit.send('cd /tmp/build/glib_config')
 		shutit.send('curl -L http://gd.tuwien.ac.at/graphics/gimp/gtk/v1.2/glib-1.2.10.tar.gz | tar -zxf -')
 		shutit.send('cd glib*')
+		# Replace config.sub as downloaded one seems broke
+		shutit.send_host_file('/tmp/build/glib_config/glib*/config.sub','context/config.sub')
+		shutit.send('chmod +x /tmp/build/glib_config/glib*/config.sub')
 		shutit.send('curl -L http://www.linuxfromscratch.org/blfs/downloads/6.1/glib-1.2.10-gcc34-1.patch | patch -Np1 -i -')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')

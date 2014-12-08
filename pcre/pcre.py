@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.pcre.pcre', 158844782.0028,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.bzip2.bzip2','shutit.tk.sd.readline.readline']
+		depends=['shutit.tk.sd.bzip2.bzip2','shutit.tk.sd.readline.readline','shutit.tk.sd.zlib.zlib']
 	)
 
