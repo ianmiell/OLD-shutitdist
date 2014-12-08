@@ -17,7 +17,7 @@ class gettext(ShutItModule):
 		shutit.send('cd gettext-*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
-		shutit.send('make check')
+		#shutit.send('make check') # time-saver
 		shutit.send('make install')
 		return True
 
