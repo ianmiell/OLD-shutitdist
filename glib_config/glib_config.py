@@ -4,22 +4,21 @@
 from shutit_module import ShutItModule
 
 
-class glib(ShutItModule):
+class glib_config(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/glib')
-		shutit.send('cd /tmp/build/glib')
-		shutit.send('curl -L http://ftp.gnome.org/pub/gnome/sources/glib/2.40/glib-2.40.0.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd glib*')
-		shutit.send('./configure --prefix=/usr --with-pcre=system')
+		shutit.send('mkdir -p /tmp/build/glib1')
+		shutit.send('cd /tmp/build/glib1')
+		shutit.send('curl -L http://gd.tuwien.ac.at/graphics/gimp/gtk/v1.2/glib-1.2.10.tar.gz | tar -zxf -')
+		shutit.send('curl -L http://www.linuxfromscratch.org/blfs/downloads/6.1/glib-1.2.10-gcc34-1.patch | patch -Np1 -i -')
+		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
-		# Remove old glib.so's to avoid confusion (eg atk breaks later otherwise)
-		#shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4')
+		shutit.send('chmod -v 755 /usr/lib/libgmodule-1.2.so.0.0.10')
 		return True
 
 	#def get_config(self, shutit):
@@ -45,10 +44,10 @@ class glib(ShutItModule):
 	#	return True
 
 def module():
-	return glib(
-		'shutit.tk.sd.glib.glib', 158844782.0091,
+	return glib_config(
+		'shutit.tk.sd.glib_config.glib_config', 158844782.00115,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.pcre.pcre','shutit.tk.sd.gettext.gettext','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.glib_config.glib_config']
+		depends=['shutit.tk.sd.setup.setup']
 	)
 
