@@ -10,7 +10,12 @@ fi
 pushd ..
 find . | grep .cnf$ | xargs chmod 0600
 popd
-for d in setup glib_config bzip2 tcl autoconf gperf icu sqlite which gmp lzo onigurama flex xmlto gettext automake libffi libidn texinfo util_macros expat zlib apache_portable_runtime pkg_config openssl procps_ng openjade cpio libssl zip python2 wget ncurses readline llvm asciidoc help2man libxml2 python_pip nettle tls libarchive libxslt docbookxml docbookxsl apache_portable_runtime_util scons cmake serf subversion gmp git libtool jq sthttpd kona go xcb_proto libxau linuxbrew libpng libxcb glib harfbuzz pcre rsync gawk sgml_common bison groff docbook vim lxml inetutils yacc libxslt iproute2 less giflib sudo x7proto alsa_lib libxau linuxbrew libpng freetype freetype2 desktop_file_utils fontconfig opensp docbook_dsssl docbook_sgml_dtd docbook_utils xorg_libs atk cups nasm libjpeg libtiff gdk_pixbuf pixman cairo pango gtk2 lcms java_binary ant junit findutils nspr nss openjdk berkeleydb apache
+
+#cat test.sh | grep git | tr ' ' '\n' | sort | grep -vw for | grep -vw d | grep -vw in > ../sortedtest
+#ls -1 | grep -vw bin | grep -vw [A-Z] | sort > sorteddirs
+#meld sorteddirs sortedtest
+# TODO: curl cyrus_sasl erlang
+for d in setup glib_config bzip2 tcl sharutils autoconf gperf icu sqlite which gmp lzo onigurama flex xmlto gettext automake libffi libidn texinfo util_macros expat zlib apache_portable_runtime pkg_config openssl procps_ng openjade cpio libssl zip python2 wget ncurses readline llvm asciidoc help2man libxml2 python_pip nettle tls libarchive libxslt docbookxml docbookxsl apache_portable_runtime_util scons cmake serf subversion git libtool jq sthttpd kona go xcb_proto libxau linuxbrew libpng libxcb glib harfbuzz pcre rsync gawk sgml_common bison groff docbook vim lxml inetutils yacc iproute2 less giflib sudo x7proto alsa_lib freetype freetype2 desktop_file_utils fontconfig opensp docbook_dsssl docbook_sgml_dtd docbook_utils xorg_libs atk cups nasm libjpeg libtiff gdk_pixbuf pixman cairo pango gtk2 lcms java_binary ant junit findutils nspr nss openjdk berkeleydb apache
 do
 	if [[ $started = "0" ]]
 	then
