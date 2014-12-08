@@ -13,8 +13,8 @@ class apache(ShutItModule):
 	def build(self, shutit):
 		shutit.send('curl -L http://archive.apache.org/dist/httpd/httpd-2.4.10.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd httpd*')
-		shutit.send('groupadd -g 25 apache')
-		shutit.send('useradd -c "Apache Server" -d /srv/www -g apache -s /bin/false -u 25 apache')
+		shutit.send('groupadd -g 102 apache')
+		shutit.send('useradd -c "Apache Server" -d /srv/www -g apache -s /bin/false -u 102 apache')
 		shutit.send('curl -L http://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.10-blfs_layout-1.patch | patch -Np1 -i -')
 		shutit.send('''sed '/dir.*CFG_PREFIX/s@^@#@' -i support/apxs.in''')
 		shutit.send('./configure --enable-authnz-fcgi --enable-layout=BLFS --enable-mods-shared="all cgi" --enable-mpms-shared=all --enable-suexec=shared --with-apr=/usr/bin/apr-1-config --with-apr-util=/usr/bin/apu-1-config --with-suexec-bin=/usr/lib/httpd/suexec --with-suexec-caller=apache --with-suexec-docroot=/srv/www --with-suexec-logfile=/var/log/httpd/suexec.log --with-suexec-uidmin=100 --with-suexec-userdir=public_html')
@@ -54,6 +54,6 @@ def module():
 		'shutit.tk.sd.apache.apache', 158844782.007215135325,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.pcre.pcre','shutit.tk.libxml2.libml2']
+		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.pcre.pcre','shutit.tk.sd.libxml2.libxml2']
 	)
 

@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.libxau.libxau', 158844782.0082,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.x7proto.x7proto','shutit.tk.sd.xcb_proto.xcb_proto','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.libxslt.libxslt']
+		depends=['shutit.tk.sd.x7proto.x7proto','shutit.tk.sd.xcb_proto.xcb_proto','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.pkg_config.pkg_config']
 	)
 

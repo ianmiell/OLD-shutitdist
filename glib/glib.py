@@ -19,7 +19,7 @@ class glib(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		# Remove old glib.so's to avoid confusion (eg atk breaks later otherwise)
-		shutit.send('rm /lib/x86_64-linux-gnu/libglib-2.0.so.0 /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4')
+		#shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4')
 		return True
 
 	#def get_config(self, shutit):
