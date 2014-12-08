@@ -38,6 +38,8 @@ class openssl(ShutItModule):
 		shutit.send('install BLFS-ca-bundle*.crt /etc/ssl/ca-bundle.crt')
 		shutit.send('ln -sfv ../ca-bundle.crt /etc/ssl/certs/ca-certificates.crt')
 		shutit.send('rm -r certs BLFS-ca-bundle*')
+		# Remove the old libssl
+		shutit.send('rm -f /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0')
 		return True
 
 	#def get_config(self, shutit):
