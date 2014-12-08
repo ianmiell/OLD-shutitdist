@@ -15,6 +15,7 @@ class curl(ShutItModule):
 		shutit.send('curl -L http://curl.haxx.se/download/curl-7.39.0.tar.gz | tar -zxf -')
 		shutit.send('cd curl*')
 		shutit.send('apt-get -y purge curl')
+# TODO: actually destroy all trace of curl from /usr
 		shutit.send('./configure --prefix=/usr --disable-static --enable-threaded-resolver')
 		shutit.send('make')
 		shutit.send('make install')
