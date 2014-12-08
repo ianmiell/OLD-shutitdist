@@ -11,9 +11,10 @@ class glib_config(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/glib1')
-		shutit.send('cd /tmp/build/glib1')
+		shutit.send('mkdir -p /tmp/build/glib_config')
+		shutit.send('cd /tmp/build/glib_config')
 		shutit.send('curl -L http://gd.tuwien.ac.at/graphics/gimp/gtk/v1.2/glib-1.2.10.tar.gz | tar -zxf -')
+		shutit.send('cd glib*')
 		shutit.send('curl -L http://www.linuxfromscratch.org/blfs/downloads/6.1/glib-1.2.10-gcc34-1.patch | patch -Np1 -i -')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
@@ -45,9 +46,9 @@ class glib_config(ShutItModule):
 
 def module():
 	return glib_config(
-		'shutit.tk.sd.glib_config.glib_config', 158844782.00115,
+		'shutit.tk.sd.glib_config.glib_config', 158844782.00731,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.libtool.libtool']
 	)
 
