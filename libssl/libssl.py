@@ -22,7 +22,6 @@ class libssl(ShutItModule):
 		shutit.send('./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared zlib-dynamic')
 		shutit.send('make')
 		shutit.send('make install')
-		shutit.send('cd')
 		return True
 
 	def get_config(self, shutit):

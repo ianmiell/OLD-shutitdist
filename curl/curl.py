@@ -14,13 +14,14 @@ class curl(ShutItModule):
 		shutit.send('cd /tmp/build/curl')
 		shutit.send('curl -L http://curl.haxx.se/download/curl-7.39.0.tar.gz | tar -zxf -')
 		shutit.send('cd curl*')
-		shutit.send('apt-get -y purge curl')
-		# actually destroy all trace of curl from /usr
-		shutit.send('find /usr | grep -w curl | xargs rm -rf')
-		shutit.send('find /usr | grep libcurl | xargs rm -rf')
-		shutit.send('./configure --prefix=/usr --disable-static --enable-threaded-resolver')
+		shutit.send('apt-get -y purge curl') # actually destroy all trace of curl from /usr
+		shutit.send('./configure --prefix=/usr --disable-static --enable-threaded-resolver --without-ssl  --with-gnutls')
 		shutit.send('make')
 		shutit.send('make install')
+		#shutit.send('find /usr | grep -w curl | xargs rm -rf') # actually destroy all trace of curl from /usr
+		#shutit.send('find /usr | grep libcurl | xargs rm -rf') # actually destroy all trace of curl from /usr
+		# Remove the old libssl
+		shutit.send('rm -f /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0')
 		return True
 
 	#def get_config(self, shutit):
@@ -50,6 +51,6 @@ def module():
 		'shutit.tk.sd.curl.curl', 158844782.00805,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.tls.tls','shutit.tk.sd.libssl.libssl']
 	)
 
