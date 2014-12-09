@@ -45,9 +45,9 @@ class wget(ShutItModule):
 
 def module():
 	return wget(
-		'shutit.tk.sd.wget.wget', 158844782.0022,
+		'shutit.tk.sd.wget.wget', 158844782.00801,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.tls.tls']
 	)
 

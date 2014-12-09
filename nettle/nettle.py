@@ -51,6 +51,6 @@ def module():
 		'shutit.tk.sd.nettle.nettle', 158844782.0079,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.openssl.openssl','shutit.tk.sd.gmp.gmp','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.subversion.subversion','shutit.tk.sd.libxslt.libxslt']
+		depends=['shutit.tk.sd.gmp.gmp','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.subversion.subversion','shutit.tk.sd.libxslt.libxslt']
 	)
 

@@ -47,7 +47,7 @@ class x7proto(ShutItModule):
 
 def module():
 	return x7proto(
-		'shutit.tk.sd.x7proto.x7proto', 158844782.0063,
+		'shutit.tk.sd.x7proto.x7proto', 158844782.00802,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.util_macros.util_macros','shutit.tk.sd.wget.wget']

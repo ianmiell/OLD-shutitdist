@@ -58,6 +58,6 @@ def module():
 		'shutit.tk.sd.python2.python2', 158844782.00255,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib','shutit.tk.sd.tcl.tcl','shutit.tk.sd.expat.expat','shutit.tk.sd.ncurses.ncurses','shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.libffi.libffi','shutit.tk.sd.zlib.zlib','shutit.tk.sd.tcl.tcl','shutit.tk.sd.expat.expat','shutit.tk.sd.ncurses.ncurses']
 	)
 
