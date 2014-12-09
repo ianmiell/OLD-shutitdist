@@ -57,6 +57,6 @@ def module():
 		'shutit.tk.sd.bzip2.bzip2', 158844782.0004,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.iproute2.iproute2', 158844782.0053,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.bison.bison','shutit.tk.sd.flex.flex']
+		depends=['shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.bison.bison','shutit.tk.sd.flex.flex']
 	)
 

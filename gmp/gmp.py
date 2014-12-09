@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.gmp.gmp', 158844782.0013,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

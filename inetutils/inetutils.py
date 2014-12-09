@@ -51,6 +51,6 @@ def module():
 		'shutit.tk.sd.inetutils.inetutils', 158844782.0047,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

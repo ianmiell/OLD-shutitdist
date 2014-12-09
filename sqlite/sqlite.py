@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.sqlite.sqlite', 158844782.0027,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

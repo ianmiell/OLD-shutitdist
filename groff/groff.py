@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.groff.groff', 158844782.0041,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

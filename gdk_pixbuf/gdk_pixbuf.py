@@ -15,7 +15,7 @@ class gdk_pixbuf(ShutItModule):
 		shutit.send('cd /tmp/build/gdk_pixbuf')
 		shutit.send('curl -L http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/2.30/gdk-pixbuf-2.30.8.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd gdk-pixbuf*')
-		shutit.send('./configure --prefix=/usr --with-x11')
+		shutit.send('./configure --prefix=/usr') # --with-x11?
 		shutit.send('make')
 		shutit.send('make install')
 		return True

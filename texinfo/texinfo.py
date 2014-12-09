@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.texinfo.texinfo', 158844782.0018,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

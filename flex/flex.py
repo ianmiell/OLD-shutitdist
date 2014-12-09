@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.flex.flex', 158844782.0051,
 		description='Flex',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

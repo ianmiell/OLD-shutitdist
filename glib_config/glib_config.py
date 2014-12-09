@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.glib_config.glib_config', 158844782.00731,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.libtool.libtool']
+		depends=['shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.libtool.libtool']
 	)
 

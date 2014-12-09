@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.yacc.yacc', 158844782.0048,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

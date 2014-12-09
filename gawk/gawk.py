@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.gawk.gawk', 158844782.0033,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.setup.setup', 158844782.0003,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.setup']
 	)
 

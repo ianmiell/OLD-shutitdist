@@ -61,6 +61,6 @@ def module():
 		'shutit.tk.sd.ncurses.ncurses', 158844782.0025,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 
