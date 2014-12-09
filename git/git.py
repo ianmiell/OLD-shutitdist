@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.git.git', 158844782.00806,
 		description='Git built from source',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.gettext.gettext']
 	)
 

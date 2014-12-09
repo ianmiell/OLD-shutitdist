@@ -11,8 +11,8 @@ class openjdk(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/openbetjdk')
-		shutit.send('cd /tmp/build/openbetjdk')
+		shutit.send('mkdir -p /tmp/build/openjdk')
+		shutit.send('cd /tmp/build/openjdk')
 		shutit.send('curl -L http://icedtea.classpath.org/download/source/icedtea-2.5.2.tar.xz | xz -d | tar -xf -')
 		shutit.send('curl -L http://icedtea.classpath.org/download/source/icedtea-web-1.5.1.tar.gz | tar -zxf -')
 		shutit.send('cd icedtea-2*')
@@ -80,6 +80,6 @@ def module():
 		'shutit.tk.sd.openjdk.openjdk', 158844782.0132,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.ant.ant','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.giflib.giflib','shutit.tk.sd.zip.zip','shutit.tk.sd.wget.wget','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.junit.junit','shutit.tk.sd.nss.nss','shutit.tk.sd.findutils.findutils']
+		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.ant.ant','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.giflib.giflib','shutit.tk.sd.zip.zip','shutit.tk.sd.wget.wget','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.junit.junit','shutit.tk.sd.nss.nss','shutit.tk.sd.findutils.findutils','shutit.tk.sd.zlib.zlib','shutit.tk.sd.libpng.libpng','shutit.tk.sd.lcms.lcms']
 	)
 

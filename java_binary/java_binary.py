@@ -50,6 +50,6 @@ def module():
 		'shutit.tk.sd.java_binary.java_binary', 158844782.0122,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.cairo.cairo','shutit.tk.sd.cups.cups','shutit.tk.sd.gdk_pixbuf.gdk_pixbuf','shutit.tk.sd.giflib.giflib','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.lcms.lcms','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.gawk.gawk']
+		depends=['shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.cairo.cairo','shutit.tk.sd.cups.cups','shutit.tk.sd.gdk_pixbuf.gdk_pixbuf','shutit.tk.sd.giflib.giflib','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.lcms.lcms','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.gawk.gawk','shutit.tk.sd.libgcrypt.libgcrypt']
 	)
 

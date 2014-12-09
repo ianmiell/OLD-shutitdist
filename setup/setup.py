@@ -13,7 +13,8 @@ class setup(ShutItModule):
 	def build(self, shutit):
 		shutit.install('build-essential')
 		shutit.install('curl')
-		shutit.install('libcurl4-openssl-dev')
+		shutit.install('libcurl4-gnutls-dev')
+		shutit.install('libssl-dev') # for openssl includes, for git
 		shutit.install('m4') # do we need this?
 		shutit.remove('libxml2') # old version
 		#shutit.install('strace') # remove later, for debug

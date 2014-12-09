@@ -14,6 +14,7 @@ class berkeleydb(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/berkeleydb')
 		shutit.send('cd /tmp/build/berkeleydb')
 		shutit.send('curl -L http://download.oracle.com/berkeley-db/db-6.1.19.tar.gz | tar -zxf -')
+		shutit.send('cd db*')
 		shutit.send('cd build_unix')
 		shutit.send('../dist/configure --prefix=/usr --enable-compat185 --enable-dbm --disable-static --enable-cxx')
 		shutit.send('make')

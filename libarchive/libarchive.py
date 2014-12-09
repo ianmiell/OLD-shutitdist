@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.libarchive.libarchive', 158844782.0062,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.lzo.lzo','shutit.tk.sd.openssl.openssl']
+		depends=['shutit.tk.sd.libxml2.libxml2','shutit.tk.sd.lzo.lzo']
 	)
 

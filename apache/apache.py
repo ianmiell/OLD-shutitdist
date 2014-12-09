@@ -54,6 +54,6 @@ def module():
 		'shutit.tk.sd.apache.apache', 158844782.007215135325,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.setup.setup','shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.pcre.pcre','shutit.tk.sd.libxml2.libxml2']
+		depends=['shutit.tk.sd.apache_portable_runtime_util.apache_portable_runtime_util','shutit.tk.sd.pcre.pcre','shutit.tk.sd.libxml2.libxml2']
 	)
 

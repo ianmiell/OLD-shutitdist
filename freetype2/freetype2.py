@@ -15,7 +15,7 @@ class freetype2(ShutItModule):
 		shutit.send('cd /tmp/build/harfbuzz')
 		shutit.send('curl -L http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-0.9.35.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd harfbuzz*')
-		shutit.send('./configure --prefix=/usr --with-gobject')
+		shutit.send('./configure --prefix=/usr')  #--with-gobject breaks, consider re-instating
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mkdir -p /tmp/build/freetype2')
