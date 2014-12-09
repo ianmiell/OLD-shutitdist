@@ -45,7 +45,7 @@ class gobject(ShutItModule):
 
 def module():
 	return gobject(
-		'shutit.tk.sd.gobject.gobject', 158844782.01185,
+		'shutit.tk.sd.gobject.gobject', 158844782.00955,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.bison.bison','shutit.tk.sd.flex.flex','shutit.tk.sd.glib.glib']
