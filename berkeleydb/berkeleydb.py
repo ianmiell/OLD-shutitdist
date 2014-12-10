@@ -46,9 +46,9 @@ class berkeleydb(ShutItModule):
 
 def module():
 	return berkeleydb(
-		'shutit.tk.sd.berkeleydb.berkeleydb', 158844782.0133,
+		'shutit.tk.sd.berkeleydb.berkeleydb', 158844782.0249,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.sharutils.sharutils']
+		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.sharutils.sharutils']
 	)
 
