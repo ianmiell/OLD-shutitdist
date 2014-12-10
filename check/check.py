@@ -4,19 +4,18 @@
 from shutit_module import ShutItModule
 
 
-class harfbuzz(ShutItModule):
+class check(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('apt-get -y install libglib2.0-dev') # hack - need to work out why this works and replace it
-		shutit.send('mkdir -p /tmp/build/harfbuzz')
-		shutit.send('cd /tmp/build/harfbuzz')
-		shutit.send('curl -L http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-0.9.35.tar.bz2 | bunzip2 -c | tar -xf -')
-		shutit.send('cd harfbuzz*')
-		shutit.send('./configure --prefix=/usr --with-gobject') #--with-gobject breaks, consider re-instating
+		shutit.send('mkdir -p /tmp/build/check')
+		shutit.send('cd /tmp/build/check')
+		shutit.send('curl -L http://downloads.sourceforge.net/check/check-0.9.14.tar.gz | tar -zxf -')
+		shutit.send('cd check-*')
+		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -44,10 +43,10 @@ class harfbuzz(ShutItModule):
 	#	return True
 
 def module():
-	return harfbuzz(
-		'shutit.tk.sd.harfbuzz.harfbuzz', 158844782.0096,
+	return check(
+		'shutit.tk.sd.check.check', 158844782.00242,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.icu.icu','shutit.tk.sd.gobject.gobject']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

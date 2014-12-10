@@ -50,7 +50,7 @@ class readline(ShutItModule):
 
 def module():
 	return readline(
-		'shutit.tk.sd.readline.readline', 158844782.0026,
+		'shutit.tk.sd.readline.readline', 158844782.00245,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.ncurses.ncurses']

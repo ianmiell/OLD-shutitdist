@@ -14,6 +14,7 @@ class setup(ShutItModule):
 		shutit.install('build-essential')
 		shutit.install('curl')
 		shutit.install('libcurl4-gnutls-dev')
+		shutit.install('libpcre3-dev') # required as the hand-built one causes problems at pango
 		shutit.install('libssl-dev') # for openssl includes, for git
 		shutit.install('m4') # do we need this?
 		shutit.remove('libxml2') # old version

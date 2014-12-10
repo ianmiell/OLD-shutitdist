@@ -58,7 +58,7 @@ class ncurses(ShutItModule):
 
 def module():
 	return ncurses(
-		'shutit.tk.sd.ncurses.ncurses', 158844782.0025,
+		'shutit.tk.sd.ncurses.ncurses', 158844782.00241,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.pkg_config.pkg_config']

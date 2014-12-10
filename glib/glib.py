@@ -15,11 +15,11 @@ class glib(ShutItModule):
 		shutit.send('cd /tmp/build/glib')
 		shutit.send('curl -L http://ftp.gnome.org/pub/gnome/sources/glib/2.40/glib-2.40.0.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd glib*')
-		shutit.send('./configure --prefix=/usr --with-pcre=system')
+		shutit.send('./configure --prefix=/usr') #--with-pcre=system removed for now
 		shutit.send('make')
 		shutit.send('make install')
-		# Remove old glib.so's to avoid confusion (eg atk breaks later otherwise)
-		#shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4')
+		# Remove old glib.so's to avoid confusion (eg atk and pango breaks later otherwise)
+		shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /usr/lib/x86_64-linux-gnu/libgio-2.0.a /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
 		return True
 
 	#def get_config(self, shutit):
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.glib.glib', 158844782.0091,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.pcre.pcre','shutit.tk.sd.gettext.gettext','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.glib_config.glib_config']
+		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.gettext.gettext','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.glib_config.glib_config']
 	)
 

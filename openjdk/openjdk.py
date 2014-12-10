@@ -42,7 +42,7 @@ class openjdk(ShutItModule):
 		shutit.send('ln -s /usr/include/linux/xattr.h /usr/include/attr/xattr.h') # required to allow us to find the header file
 		shutit.send('unset JAVA_HOME')
 		shutit.send('./autogen.sh')
-		shutit.send('./configure --with-jdk-home=/opt/OpenJDK-1.7.0.65-bin/OpenJDK-1.7.0.65-x86_64-bin --with-version-suffix=BLFS --enable-nss --disable-system-kerberos --with-parallel-jobs ')
+		shutit.send('./configure --with-jdk-home=/opt/OpenJDK-1.7.0.65-bin/OpenJDK-1.7.0.65-x86_64-bin --with-version-suffix=SHUTIT --enable-nss --disable-system-kerberos --with-parallel-jobs')
 		shutit.send('make')
 		shutit.send('chmod 0644 openjdk.build/j2sdk-image/lib/sa-jdi.jar')
 		shutit.send('cp -R openjdk.build/j2sdk-image /opt/OpenJDK-1.7.0.65')
@@ -77,9 +77,9 @@ class openjdk(ShutItModule):
 # TODO: NSS? 
 def module():
 	return openjdk(
-		'shutit.tk.sd.openjdk.openjdk', 158844782.0132,
+		'shutit.tk.sd.openjdk.openjdk', 158844782.0241,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.ant.ant','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.giflib.giflib','shutit.tk.sd.zip.zip','shutit.tk.sd.wget.wget','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.junit.junit','shutit.tk.sd.nss.nss','shutit.tk.sd.findutils.findutils','shutit.tk.sd.zlib.zlib','shutit.tk.sd.libpng.libpng','shutit.tk.sd.lcms.lcms']
+		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.ant.ant','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.gtk2.gtk2','shutit.tk.sd.giflib.giflib','shutit.tk.sd.zip.zip','shutit.tk.sd.wget.wget','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.junit.junit','shutit.tk.sd.nss.nss','shutit.tk.sd.findutils.findutils','shutit.tk.sd.zlib.zlib','shutit.tk.sd.libpng.libpng','shutit.tk.sd.lcms.lcms','shutit.tk.sd.x7lib.x7lib']
 	)
 
