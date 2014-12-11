@@ -14,8 +14,8 @@ class go(ShutItModule):
 		shutit.send('curl -L https://storage.googleapis.com/golang/go' + shutit.cfg[self.module_id]['version'] + '.src.tar.gz | tar -zxf -')
 		shutit.send('cd go/src/')
 		shutit.send('GOROOT_FINAL=/usr ./make.bash')
-		shutit.send('mv go /usr/bin')
-		shutit.send('mv gofmt /usr/bin')
+		shutit.send('mv /tmp/build/go/go/bin/go /usr/bin')
+		shutit.send('mv /tmp/build/go/go/bin/gofmt /usr/bin')
 		return True
 
 	def get_config(self,shutit):
