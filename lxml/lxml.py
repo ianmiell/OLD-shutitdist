@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.lxml.lxml', 158844782.00525,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libxslt.libxslt']
+		depends=['shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.zip.zip']
 	)
 
