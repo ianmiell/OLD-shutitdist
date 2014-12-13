@@ -19,7 +19,7 @@ class glib(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		# Remove old glib.so's to avoid confusion (eg atk and pango breaks later otherwise)
-		shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /usr/lib/x86_64-linux-gnu/libgio-2.0.a /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
+		#shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /usr/lib/x86_64-linux-gnu/libgio-2.0.a /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
 		return True
 
 	#def get_config(self, shutit):
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.glib.glib', 158844782.0091,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.gettext.gettext','shutit.tk.sd.pkg_config.pkg_config','shutit.tk.sd.glib_config.glib_config']
+		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.gettext.gettext','shutit.tk.sd.pkg_config.pkg_config']
 	)
 
