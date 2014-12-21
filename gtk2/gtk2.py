@@ -24,7 +24,7 @@ class gtk2(ShutItModule):
 		shutit.send('cd /tmp/build/gtk2')
 		shutit.send('curl -L http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.24.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd gtk*')
-		shutit.send('''sed -i 's#l \(gtk-.*\).sgml#& -o \1#' docs/{faq,tutorial}/Makefile.in''')
+		shutit.send(r'''sed -i 's#l \(gtk-.*\).sgml#& -o \1#' docs/{faq,tutorial}/Makefile.in''')
 		shutit.send('''sed -i 's#.*@man_#man_#' docs/reference/gtk/Makefile.in''')
 		shutit.send('''sed -i -e 's#pltcheck.sh#$(NULL)#g' gtk/Makefile.in''')
 		shutit.send('./configure --prefix=/usr --sysconfdir=/etc')
